@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vent1Line</title>
+    <link
+      rel="shortcut icon"
+      type="img/png"
+      href="/Vent1imgs/Les logos/Zomi.jpg"
+    />
+    <link rel="stylesheet" href="/Scss/Vint1lineStyle.css" />
+  </head>
+
+  <body>
+    <header>
+      <div class="logo_content">
+        <img src="/Vent1imgs/Les logos/Zomi.jpg" />
+        <h1>Vent1Ligne</h1>
+      </div>
+
+      <!--Navigation-->
+
+      <!--Navigation buttons-->
+      <div class="navi1">
+        <!--Search button-->
+        <div class="searchBarContainer">
+          <button id="searchButton">Search</button>
+          <div id="searchDropdown">
+            <input type="text" id="searchInput" placeholder="Search..." />
+            <button id="searchSubmit">Submit</button>
+          </div>
+        </div>
+        <ul>
+          <li>
+            <a href="/Products/Products.html">Wares</a>
+          </li>
+          <li class="Contact">
+            <a href="/Vent1Ligne-Contacts/About.html">About</a>
+          </li>
+          <li class="Contact">
+            <a href="/For_Accounts/Log_in.html">Login</a>
+          </li>
+        </ul>
+      </div>
+    </header>
+
+    <!--Main content-->
+    <main>
+      <!--Intro floor-->
+      <div class="intromain">
+        <h1>Welcome!</h1>
+        <button
+          class="intromain_button"
+          onclick="document.getElementById('id01').style.display='block'"
+          style="width: auto"
+        >
+          Registrer
+        </button>
+      </div>
+
+      <h1 class="mid">Nouvou produi</h1>
+      <!--News floor-->
+      <div class="news_floor">
+        <img src="/Vent1imgs/Les produit terrain/P1.jpg" alt="" />
+        <img src="/Vent1imgs/Les produit terrain/P2.jpg" alt="" />
+        <img src="/Vent1imgs/Les produit terrain/P3.jpg" alt="" />
+        <img src="/Vent1imgs/Les produit terrain/P4.jpg" alt="" />
+      </div>
+
+      <!--second_floor with sidbar-->
+      <div class="second">
+        <div class="second_sidebar1"></div>
+        <div class="second_sidebar2">
+          <div class="midbar1"></div>
+          <div class="midbar2"></div>
+        </div>
+      </div>
+      <!--Last_floor with 3 sidebars-->
+      <div class="last">
+        <div class="last_sidebar1"></div>
+        <div class="last_sidebar2"></div>
+        <div class="last_sidebar3"></div>
+      </div>
+      <!--Registrer format-->
+      <div id="id01" class="modal">
+        <span
+          onclick="document.getElementById('id01').style.display='none'"
+          class="close"
+          title="Close Modal"
+          >&times;</span
+        >
+        <form class="modal-content" action="/action_page.php">
+          <div class="container">
+            <h1>Sign Up</h1>
+            <p>Please fill in this form to create an account.</p>
+            <hr />
+            <label for="email"><b>Email</b></label>
+            <input
+              type="text"
+              placeholder="Enter Email"
+              name="email"
+              required
+            />
+
+            <label for="psw"><b>Password</b></label>
+            <input
+              type="password"
+              placeholder="Enter Password"
+              name="psw"
+              required
+            />
+
+            <label for="psw-repeat"><b>Repeat Password</b></label>
+            <input
+              type="password"
+              placeholder="Repeat Password"
+              name="psw-repeat"
+              required
+            />
+
+            <label>
+              <input
+                type="checkbox"
+                checked="checked"
+                name="remember"
+                style="margin-bottom: 15px"
+              />
+              Remember me
+            </label>
+
+            <p>
+              By creating an account you agree to our
+              <a href="#" style="color: dodgerblue">Terms & Privacy</a>.
+            </p>
+
+            <div class="clearfix">
+              <button
+                type="button"
+                onclick="document.getElementById('id01').style.display='none'"
+                class="cancelbtn"
+              >
+                Cancel
+              </button>
+              <button type="submit" class="signupbtn">Sign Up</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </main>
+
+    <!--Footer content-->
+    <footer>
+      <p style="color: rgb(255, 255, 255)">@Copyright 2023 My Website</p>
+    </footer>
+  </body>
+
+  <!--Javascript content-->
+  <script>
+    // Get the modal
+    var modal = document.getElementById("id01");
+
+    // Makes the search-dropdown
+    document.addEventListener("DOMContentLoaded", function () {
+      var searchButton = document.getElementById("searchButton");
+      var searchDropdown = document.getElementById("searchDropdown");
+      var searchInput = document.getElementById("searchInput");
+      var searchSubmit = document.getElementById("searchSubmit");
+
+      searchButton.addEventListener("click", function () {
+        searchDropdown.style.display =
+          searchDropdown.style.display === "block" ? "none" : "block";
+        searchInput.focus();
+      });
+
+      searchSubmit.addEventListener("click", function () {
+        var searchQuery = searchInput.value;
+        // Perform search with searchQuery
+        console.log("Search query:", searchQuery);
+        // Hide the search bar dropdown after search
+        searchDropdown.style.display = "none";
+      });
+    });
+  </script>
+</html>

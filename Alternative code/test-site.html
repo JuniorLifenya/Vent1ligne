@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Search Bar Dropdown</title>
+    <link rel="stylesheet" href="/Alternative code/test-site.css" />
+  </head>
+  <body>
+    <div class="searchBarContainer">
+      <button id="searchButton">Search</button>
+      <div id="searchDropdown">
+        <input type="text" id="searchInput" placeholder="Search..." />
+        <button id="searchSubmit">Submit</button>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var searchButton = document.getElementById("searchButton");
+        var searchDropdown = document.getElementById("searchDropdown");
+        var searchInput = document.getElementById("searchInput");
+        var searchSubmit = document.getElementById("searchSubmit");
+
+        searchButton.addEventListener("click", function () {
+          searchDropdown.style.display =
+            searchDropdown.style.display === "block" ? "none" : "block";
+          searchInput.focus();
+        });
+
+        searchSubmit.addEventListener("click", function () {
+          var searchQuery = searchInput.value;
+          // Perform search with searchQuery
+          console.log("Search query:", searchQuery);
+          // Hide the search bar dropdown after search
+          searchDropdown.style.display = "none";
+        });
+      });
+    </script>
+  </body>
+</html>
