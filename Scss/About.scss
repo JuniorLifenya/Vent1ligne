@@ -1,0 +1,82 @@
+
+@import'./headers';
+  footer{
+    height: 100px;
+    background-color:rgb(11, 74, 114);
+    }
+  *{
+    margin:0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+  }
+  body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+  } 
+  main{ 
+    @include mobile{
+      flex-direction: column;
+    }
+    height: 1825px;
+    background-color: wheat;
+    background-position: bottom;
+    background-size: cover;
+    
+  }
+  .bg-clip{
+    position:absolute;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    
+  }
+
+  .First{/*Edits second floor*/
+    display: flex;
+    justify-content: center;
+    height: 700px;
+    margin-bottom: 10px;
+    background-color: white;
+    &_leftbar{
+      width: 65%;
+      position:relative;
+      height: 680px;
+      position: relative;
+
+      top:1%;
+      text-align: center;
+      box-shadow: 7px 5px 7px 4px;
+      font-family: $headlines;
+      animation: bg-animation 5s infinite alternate;
+      background: $header-bg;
+      background-size: 400%;
+    }
+    &_rightbar{
+      
+      
+      width: 30%;
+      position:relative;
+      height: 680px;
+      position: relative;
+      top:1%;
+    }
+  }
+    
+  .pic-box{
+    display: flex;
+    flex-direction: column;
+    position: relative ;
+    top: 4%;
+    margin-left: 50px;
+  }
+  .pic-box img{
+    height: 200px;
+    width: 200px;
+    margin-bottom: 10px;
+    border-radius: 9px;
+    box-shadow: 7px 5px 7px 4px;
+  }
+  
+  

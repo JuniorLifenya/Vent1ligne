@@ -1,0 +1,118 @@
+@import "./variables";
+
+@mixin mobile {
+  @media (max-width: $mobile) {
+    /*If the page gets lower than 800px wide it changes flex direction*/
+    @content;
+  }
+}
+* {
+  padding: 0;
+  margin: 0;
+}
+header {
+  height: 150px;
+  display: flex;
+  width: 100%;
+  position: relative;
+  animation: bg-animation 5s infinite alternate;
+  background: $header-bg;
+  background-size: 400%;
+}
+@keyframes bg-animation {
+  0% {
+    background-position: left;
+  }
+  100% {
+    background-position: right;
+  }
+}
+.logo_content img {
+  top: -1px;
+  left: 31px;
+  height: 90px;
+  position: relative;
+  margin-right: 56px;
+}
+.logo_content {
+  display: inline-block;
+  display: flex;
+  align-items: center;
+}
+.logo_content h1 {
+  color: whitesmoke;
+  font-family: Courier;
+}
+.navi1 {
+  /*Redigerer posisjonen til listen*/
+  height: 142px;
+  position: relative;
+  top: 0%;
+  left: 9%;
+  width: 455px;
+  list-style: none;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+.navi1 li {
+  /*Edit the entire list of links to the other pages*/
+  display: inline-block;
+  font-family: "Fjall One", sans-serif;
+  border: 1px solid whitesmoke;
+  border-radius: 9px;
+  box-shadow: 7px 5px 7px 4px;
+  font-size: 26px;
+  padding: 7px;
+  transition: transform 0.3s;
+  margin-right: 25px;
+}
+.navi1 li:hover {
+  background-color: rgb(228, 207, 167);
+  transform: translateY(-5px);
+}
+
+button[type="submit"] {
+  width: 50%;
+  background-color: #4caf50;
+  color: white;
+  padding: 14px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button[type="reset"] {
+  width: 50%;
+  background-color: #f44336;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.search-content {
+  display: flex;
+  position: relative;
+  flex-flow: column;
+}
+.search-content form {
+  position: relative;
+  top: 37%;
+  left: 40%;
+}
+input[type="search"] {
+  width: 300px;
+  height: 40px;
+  padding: 0 10px;
+  font-size: 16px;
+  position: relative;
+}
+button[type="submit"] {
+  width: 60px; /* sets the width of the search bar to 300px */
+  height: 40px; /* sets the height of the search bar to 30px */
+  padding: 0 10px; /* adds space within the search bar */
+  font-size: 16px;
+  background-color: rgb(0, 255, 238);
+}

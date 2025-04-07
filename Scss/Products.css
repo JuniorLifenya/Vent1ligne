@@ -1,0 +1,217 @@
+/*Kan bruke variabler slik*/
+* {
+  padding: 0;
+  margin: 0;
+}
+
+header {
+  height: 150px;
+  display: flex;
+  width: 100%;
+  position: relative;
+  animation: bg-animation 5s infinite alternate;
+  background: linear-gradient(45deg, rgb(47, 8, 66), rgb(0, 91, 107), rgb(59, 19, 19));
+  background-size: 400%;
+}
+
+@keyframes bg-animation {
+  0% {
+    background-position: left;
+  }
+  100% {
+    background-position: right;
+  }
+}
+.logo_content img {
+  top: -1px;
+  left: 31px;
+  height: 90px;
+  position: relative;
+  margin-right: 56px;
+}
+
+.logo_content {
+  display: inline-block;
+  display: flex;
+  align-items: center;
+}
+
+.logo_content h1 {
+  color: whitesmoke;
+  font-family: Courier;
+}
+
+.navi1 { /*Redigerer posisjonen til listen*/
+  height: 142px;
+  position: relative;
+  top: 0%;
+  left: 9%;
+  width: 455px;
+  list-style: none;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.navi1 li { /*Edit the entire list of links to the other pages*/
+  display: inline-block;
+  font-family: "Fjall One", sans-serif;
+  border: 1px solid whitesmoke;
+  border-radius: 9px;
+  box-shadow: 7px 5px 7px 4px;
+  font-size: 26px;
+  padding: 7px;
+  transition: transform 0.3s;
+  margin-right: 25px;
+}
+
+.navi1 li:hover {
+  background-color: rgb(228, 207, 167);
+  transform: translateY(-5px);
+}
+
+button[type=submit] {
+  width: 50%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button[type=reset] {
+  width: 50%;
+  background-color: #f44336;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.search-content {
+  display: flex;
+  position: relative;
+  flex-flow: column;
+}
+
+.search-content form {
+  position: relative;
+  top: 37%;
+  left: 40%;
+}
+
+input[type=search] {
+  width: 300px;
+  height: 40px;
+  padding: 0 10px;
+  font-size: 16px;
+  position: relative;
+}
+
+button[type=submit] {
+  width: 60px; /* sets the width of the search bar to 300px */
+  height: 40px; /* sets the height of the search bar to 30px */
+  padding: 0 10px; /* adds space within the search bar */
+  font-size: 16px;
+  background-color: rgb(0, 255, 238);
+}
+
+footer {
+  height: 100px;
+  background-color: rgb(11, 74, 114);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+}
+
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+main {
+  margin-top: 0px;
+  height: 1825px;
+  background-position: bottom;
+  background-size: cover;
+  background-color: rgb(0, 211, 211);
+}
+@media (max-width: 800px) {
+  main {
+    /*If the page gets lower than 800px wide it changes flex direction*/
+    flex-direction: column;
+  }
+}
+
+.First { /*Edits first floor*/
+  display: flex;
+  justify-content: center;
+  height: 700px;
+  background-color: wheat;
+}
+.First_leftbar {
+  background-image: url(/Vent1imgs/Autre/levre-produi.jpg);
+  background-position: center;
+  width: 62%;
+  position: relative;
+  height: 680px;
+  position: relative;
+  margin-right: 10px;
+  top: 1%;
+  border-radius: 3%;
+}
+.First_rightbar {
+  width: 35%;
+  position: relative;
+  height: 680px;
+  position: relative;
+  top: 1%;
+  border-radius: 3%;
+  text-align: center;
+  font-family: cursive;
+}
+
+.second { /*Edits second floor*/
+  display: flex;
+  margin-top: 10px;
+  justify-content: center;
+  height: 700px;
+  background-color: wheat;
+}
+.second_leftbar {
+  width: 35%;
+  position: relative;
+  height: 680px;
+  position: relative;
+  margin-right: 10px;
+  top: 1%;
+  border-radius: 6%;
+  font-family: cursive;
+}
+.second_rightbar {
+  border-radius: 6%;
+  animation: bg-animation 5s infinite alternate;
+  background: linear-gradient(45deg, rgb(47, 8, 66), rgb(0, 91, 107), rgb(59, 19, 19));
+  background-size: 400%;
+  width: 62%;
+  position: relative;
+  height: 680px;
+  position: relative;
+  top: 1%;
+}
+
+.last {
+  display: flex;
+  background-color: wheat;
+  height: 400px;
+  margin-top: 10px;
+}/*# sourceMappingURL=Products.css.map */
