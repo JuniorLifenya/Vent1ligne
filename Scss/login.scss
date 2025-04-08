@@ -62,26 +62,25 @@ input[type="password"] {
 body {
   margin: 0;
   padding: 0;
-  background-image: url(/Vent1imgs/Backgrounds/strand_fjell.jpg);
+  background-image: url(/Venturoimgs/Backgrounds/strand_fjell.jpg);
   background-size: cover;
   background-position: center;
   font-family: sans-serif;
 }
-.homebutton li{
-    border: 5px seagreen;
-    width: 100px;
-    height:40px;
-    border-radius: 25px;
-    background-color:rgb(24, 107, 159);
-    list-style: none;
-    position:relative;
-    left: 30%;
-    top: 10%;
-    text-align: center;
-    
+.homebutton li {
+  border: 5px seagreen;
+  width: 100px;
+  height: 40px;
+  border-radius: 25px;
+  background-color: rgb(24, 107, 159);
+  list-style: none;
+  position: relative;
+  left: 30%;
+  top: 10%;
+  text-align: center;
 }
-.homebutton li a{
-  position:relative;
-  top:25%;
-  color:white;
+.homebutton li a {
+  position: relative;
+  top: 25%;
+  color: white;
 }
