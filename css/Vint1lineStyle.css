@@ -1,5 +1,19 @@
-@charset "UTF-8";
 /*Kan bruke variabler slik*/
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
 header {
   height: 150px;
   display: flex;
@@ -36,19 +50,10 @@ footer {
   background-color: rgb(0, 91, 107);
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  text-decoration: none;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: sans-serif;
-  margin: 0;
-  padding: 0;
-  width: 100%;
+.logo_content {
+  display: inline-block;
+  display: flex;
+  align-items: center;
 }
 
 .logo_content img {
@@ -57,12 +62,6 @@ body {
   height: 90px;
   position: relative;
   margin-right: 56px;
-}
-
-.logo_content {
-  display: inline-block;
-  display: flex;
-  align-items: center;
 }
 
 .logo_content h1 {
@@ -83,7 +82,6 @@ body {
 }
 
 .navi1 li {
-  /*Edit the entire list of links to the other pages*/
   display: inline-block;
   font-family: "Fjall One", sans-serif;
   border-radius: 9px;
@@ -103,29 +101,18 @@ body {
   transform: translateY(-5px);
 }
 
-button[type=submit] {
-  /*Search button*/
-  width: 30%;
-  background-color: #4caf50;
-  color: white;
-  padding: 16px 22px;
-  border: none;
-  cursor: pointer;
+.nav2 {
+  height: 50px;
+  background-color: rgb(133, 127, 125);
 }
 
-button[type=reset] {
-  width: 50%;
-  background-color: #f44336;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
+.nav2 button {
+  border-radius: 0%;
+  position: relative;
+  left: 5%;
 }
 
 .searchBarContainer {
-  /*Edit the box around the search button*/
   position: relative;
   left: 29%;
   top: 27%;
@@ -134,7 +121,6 @@ button[type=reset] {
 }
 
 #searchButton {
-  /*Edit the search button itself*/
   padding: 10px;
   box-shadow: 7px 5px 7px 4px;
   font-size: 16px;
@@ -182,19 +168,27 @@ button[type=reset] {
   border-radius: 9px;
 }
 
-.nav2 {
-  height: 50px;
-  background-color: rgb(133, 127, 125);
+button[type=submit] {
+  width: 30%;
+  background-color: #4caf50;
+  color: white;
+  padding: 16px 22px;
+  border: none;
+  cursor: pointer;
 }
 
-.nav2 button {
-  border-radius: 0%;
-  position: relative;
-  left: 5%;
+button[type=reset] {
+  width: 50%;
+  background-color: #f44336;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
 .intromain {
-  /*Innhold i første div*/
   display: flex;
   position: relative;
   justify-content: center;
@@ -209,7 +203,6 @@ button[type=reset] {
   top: 1%;
 }
 .intromain_button {
-  /* Set a style for all buttons */
   padding: 14px 60px;
   margin: 8px 0;
   border: none;
@@ -222,7 +215,7 @@ button[type=reset] {
   left: -10%;
   font-size: 40px;
   font-family: cursive;
-  border-radius: 20px 20px 20px 20px;
+  border-radius: 20px;
   box-shadow: 7px 7px 7px 5px black;
   transition: transform 0.8s;
   animation: bg-animation 15s infinite alternate;
@@ -245,7 +238,7 @@ button[type=reset] {
 }
 
 .mid {
-  color: rgb(255, 255, 255);
+  color: white;
   position: relative;
   margin-left: 39%;
   top: 4%;
@@ -258,7 +251,7 @@ button[type=reset] {
   margin-left: 1%;
   top: 0%;
   align-items: center;
-  justify-content: center; /* Ensures even spacing between images */
+  justify-content: center;
   box-sizing: border-box;
   height: 350px;
   width: 100%;
@@ -266,30 +259,28 @@ button[type=reset] {
   background-position: bottom;
   background-size: cover;
   border-radius: 8px;
-  padding: 10px; /* Optional: Adds space inside the div */
+  padding: 10px;
 }
 
 .news_floor img {
-  flex: 1; /* Makes all images take equal space */
-  max-width: 100%; /* Prevents overflow */
-  height: auto; /* Maintains aspect ratio */
-  object-fit: cover; /* Ensures images fill their area */
+  flex: 1;
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
 }
 
 .second {
-  /*Edits second last floor*/
   display: flex;
   margin-top: 10px;
   justify-content: center;
   height: 700px;
-  background-color: rgb(255, 255, 255);
+  background-color: white;
 }
 .second_sidebar1 {
   background-color: rgb(65, 65, 65);
   width: 35%;
   position: relative;
   height: 680px;
-  position: relative;
   margin-right: 10px;
   top: 1%;
 }
@@ -298,12 +289,10 @@ button[type=reset] {
   width: 62%;
   position: relative;
   height: 680px;
-  position: relative;
   top: 1%;
 }
 
 .midbar1 {
-  /*Edit the midbar under secondsidebar 2*/
   background-color: aquamarine;
   height: 40%;
   margin-bottom: 20px;
@@ -312,46 +301,38 @@ button[type=reset] {
 }
 
 .midbar2 {
-  /*Edit the midbar under secondsidebar 2*/
   background-color: aquamarine;
-  height: 40%;
   height: 52%;
   border-radius: 8px;
 }
 
 .last {
-  /*Edits last floor*/
   display: flex;
   justify-content: center;
   height: 510px;
-  background-color: rgb(255, 255, 255);
+  background-color: white;
 }
-.last_sidebar1 {
+.last_sidebar1, .last_sidebar2, .last_sidebar3 {
   background-color: aquamarine;
   height: 95%;
-  width: 35%;
   margin-top: 10px;
+}
+.last_sidebar1 {
+  width: 35%;
   margin-right: 10px;
 }
 .last_sidebar2 {
-  background-color: aquamarine;
-  height: 95%;
   width: 30%;
-  margin-top: 10px;
   margin-right: 10px;
 }
 .last_sidebar3 {
-  background-color: aquamarine;
-  height: 95%;
   width: 32%;
-  margin-top: 10px;
 }
 
 .prod {
-  /*Endrer hoved produkt ved starten*/
   border-radius: 8px;
   margin-right: 20px;
-  border: 8px solid rgb(255, 255, 255);
+  border: 8px solid white;
   height: 200px;
   top: 24%;
   left: 1%;
@@ -364,7 +345,6 @@ button[type=reset] {
   height: 180px;
 }
 
-/* Full-width input fields */
 input[type=text],
 input[type=password] {
   width: 100%;
@@ -375,20 +355,17 @@ input[type=password] {
   background: #f1f1f1;
 }
 
-/* Add a background color when the inputs get focus */
 input[type=text]:focus,
 input[type=password]:focus {
   background-color: #ddd;
   outline: none;
 }
 
-/* Extra styles for the cancel button */
 .cancelbtn {
   padding: 14px 20px;
   background-color: #f44336;
 }
 
-/* Float cancel and signup buttons and add an equal width */
 .cancelbtn,
 .signupbtn {
   float: left;
@@ -396,7 +373,6 @@ input[type=password]:focus {
   position: relative;
 }
 
-/* Add padding to container elements */
 .container {
   padding: 16px;
 }
@@ -416,39 +392,35 @@ input[type=password]:focus {
 }
 
 .footer-text {
-  color: rgb(255, 255, 255);
+  color: white;
   font-size: 0.9rem;
   text-align: center;
 }
 
-/* The Modal (background) */
 .modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 2; /* Sit on top */
+  display: none;
+  position: fixed;
+  z-index: 2;
   left: 0;
   top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /*Enable scrolling if needed*/
+  width: 100%;
+  height: 100%;
+  overflow: auto;
   padding-top: 50px;
 }
 
-/* Modal Content/Box */
 .modal-content {
   background-color: #fefefe;
-  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  margin: 5% auto 15% auto;
   border: 1px solid #888;
-  width: 80%; /* Could be more or less, depending on screen size */
+  width: 80%;
 }
 
-/* Style the horizontal ruler */
 hr {
   border: 1px solid #f1f1f1;
   margin-bottom: 25px;
 }
 
-/* The Close Button (x) */
 .close {
   position: absolute;
   right: 35px;
@@ -464,19 +436,10 @@ hr {
   cursor: pointer;
 }
 
-/* Clear floats */
 .clearfix::after {
   content: "";
   clear: both;
   display: table;
-}
-
-/* Change styles for cancel button and signup button on extra small screens */
-@media screen and (max-width: 300px) {
-  .cancelbtn,
-  .signupbtn {
-    width: 100%;
-  }
 }
 
 /*# sourceMappingURL=Vint1lineStyle.css.map */
