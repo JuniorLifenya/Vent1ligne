@@ -145,6 +145,8 @@ button[type=reset] {
   background-color: #04aa6d;
   width: 80px;
   border: none;
+  right: 170px;
+  top: -39px;
 }
 
 #searchDropdown {
