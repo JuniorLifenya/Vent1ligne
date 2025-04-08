@@ -307,6 +307,7 @@ button[type="reset"] {
   height: 52%;
   border-radius: 8px;
 }
+
 .last {
   /*Edits last floor*/
   display: flex;
@@ -385,6 +386,22 @@ input[type="password"]:focus {
 /* Add padding to container elements */
 .container {
   padding: 16px;
+}
+.remember-checkbox {
+  margin-bottom: 15px;
+}
+.terms-link {
+  color: dodgerblue;
+  text-decoration: underline; // optional
+  cursor: pointer; // optional for better UX
+}
+.terms-link:hover {
+  color: #1e90ff; // slightly darker blue for feedback
+}
+.footer-text {
+  color: rgb(255, 255, 255);
+  font-size: 0.9rem; // optional
+  text-align: center; // optional, if it's centered
 }
 
 /* The Modal (background) */

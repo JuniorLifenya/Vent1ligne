@@ -401,6 +401,26 @@ input[type=password]:focus {
   padding: 16px;
 }
 
+.remember-checkbox {
+  margin-bottom: 15px;
+}
+
+.terms-link {
+  color: dodgerblue;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.terms-link:hover {
+  color: #1e90ff;
+}
+
+.footer-text {
+  color: rgb(255, 255, 255);
+  font-size: 0.9rem;
+  text-align: center;
+}
+
 /* The Modal (background) */
 .modal {
   display: none; /* Hidden by default */
