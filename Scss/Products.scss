@@ -1,94 +1,91 @@
-
-  @import './headers';
-  footer{
+@import "./headers";
+footer {
   height: 100px;
-  background-color:rgb(11, 74, 114);
-  
+  background-color: rgb(11, 74, 114);
+}
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+}
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+main {
+  @include mobile {
+    flex-direction: column;
   }
-  *{
-      margin:0;
-      padding: 0;
-      list-style: none;
-      text-decoration: none;
-  }
-  body {
-      font-family: sans-serif;
-      margin: 0;
-      padding: 0;
-      width: 100%;
-  }
-  main{ 
-    @include mobile{
-      flex-direction: column;
-    }
-    margin-top: 0px;
-    height: 1825px;
-    background-position: bottom;
-    background-size: cover;
-    background-color: rgb(0, 211, 211);
-    
-  }
-  .First{/*Edits first floor*/
-    display: flex;
-    
-    justify-content: center;
-    height: 700px;
-    background-color: wheat;
-    &_leftbar{
-      background-image: url(/Vent1imgs/Autre/levre-produi.jpg);
-      background-position: center;
-      width: 62%;
-      position:relative;
-      height: 680px;
-      position: relative;
-      margin-right: 10px;
-      top:1%;
-      border-radius: 3%;
-    }
-    &_rightbar{
-      
-      width: 35%;
-      position:relative;
-      height: 680px;
-      position: relative;
-      top:1%;
-      border-radius: 3%;
-      text-align: center;
-      font-family: $headlines;
-    }
-  }
-  .second{/*Edits second floor*/
-    display: flex;
-    margin-top: 10px;
-    justify-content: center;
-    height: 700px;
-    background-color: wheat;
-    &_leftbar{
-      width: 35%;
-      position:relative;
-      height: 680px;
-      position: relative;
-      margin-right: 10px;
-      top:1%;
-      border-radius: 6%;
-      font-family: $headlines;
-    }
-    &_rightbar{
-      border-radius: 6%;
-      animation: bg-animation 5s infinite alternate;
-      background: $header-bg;
-      background-size: 400%;
-      width: 62%;
-      position:relative;
-      height: 680px;
-      position: relative;
-      top:1%;
-    }
-  }
-  .last{
-    display: flex;
-    background-color: wheat;
-    height: 400px;
-    margin-top: 10px;
-  }
+  margin-top: 0px;
+  height: 1825px;
+  background-position: bottom;
+  background-size: cover;
+  background-color: rgb(0, 211, 211);
+}
+.First {
+  /*Edits first floor*/
+  display: flex;
 
+  justify-content: center;
+  height: 700px;
+  background-color: wheat;
+  &_leftbar {
+    background-image: url(/Vent1imgs/Autre/levre-produi.jpg);
+    background-position: center;
+    width: 62%;
+    position: relative;
+    height: 680px;
+    position: relative;
+    margin-right: 10px;
+    top: 1%;
+    border-radius: 3%;
+  }
+  &_rightbar {
+    width: 35%;
+    position: relative;
+    height: 680px;
+    position: relative;
+    top: 1%;
+    border-radius: 3%;
+    text-align: center;
+    font-family: $headlines;
+  }
+}
+.second {
+  /*Edits second floor*/
+  display: flex;
+  margin-top: 10px;
+  justify-content: center;
+  height: 700px;
+  background-color: wheat;
+  &_leftbar {
+    width: 35%;
+    position: relative;
+    height: 680px;
+    position: relative;
+    margin-right: 10px;
+    top: 1%;
+    border-radius: 6%;
+    font-family: $headlines;
+  }
+  &_rightbar {
+    border-radius: 6%;
+    animation: bg-animation 5s infinite alternate;
+    background: $header-bg;
+    background-size: 400%;
+    width: 62%;
+    position: relative;
+    height: 680px;
+    position: relative;
+    top: 1%;
+  }
+}
+.last {
+  display: flex;
+  background-color: wheat;
+  height: 400px;
+  margin-top: 10px;
+}
