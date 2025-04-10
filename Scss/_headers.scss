@@ -102,6 +102,9 @@ button[type="reset"] {
   top: 37%;
   left: 40%;
 }
+.search-content button {
+  background-color: black; /*Probleme here, we have this overrided by soemthing else idk now
+}
 input[type="search"] {
   width: 300px;
   height: 40px;

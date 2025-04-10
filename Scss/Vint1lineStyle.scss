@@ -30,11 +30,14 @@ body {
 // HEADER
 // =====================
 header {
-  height: 150px;
+  height: 145px;
   display: flex;
   width: 100%;
-  position: relative;
-  animation: bg-animation 5s infinite alternate;
+  max-width: auto; /* Match your site's max width */
+  margin: 0 auto; /* Center header */
+  padding: 0 20px; /* Add padding to avoid edge sticking */
+  position: relative; /* Keep your existing animation/bg styles */
+  animation: bg-animation 4s infinite alternate;
   background: $header-bg;
   background-size: 400%;
 }
@@ -78,7 +81,7 @@ footer {
 }
 .logo_content img {
   top: -1px;
-  left: 31px;
+  left: 20px;
   height: 90px;
   position: relative;
   margin-right: 56px;
@@ -91,12 +94,13 @@ footer {
   height: 142px;
   position: relative;
   top: 0%;
-  left: 27%;
-  width: 455px;
+  left: auto;
+  width: auto;
   list-style: none;
   align-items: center;
   justify-content: center;
   display: flex;
+  margin-left: auto;
 }
 .navi1 li {
   display: inline-block;
@@ -184,9 +188,9 @@ footer {
   border-radius: 9px;
 }
 button[type="submit"] {
-  width: 30%;
+  width: 25%;
   background-color: #4caf50;
-  color: white;
+  color: black;
   padding: 16px 22px;
   border: none;
   cursor: pointer;
@@ -209,7 +213,7 @@ button[type="reset"] {
   display: flex;
   position: relative;
   justify-content: center;
-  height: 200px;
+  height: 220px;
   background-image: url(/Venturoimgs/Backgrounds/fjellside.jpg);
   background-position: center;
   background-size: cover;
@@ -234,7 +238,7 @@ button[type="reset"] {
     border-radius: 20px;
     box-shadow: 7px 7px 7px 5px black;
     transition: transform 0.8s;
-    animation: bg-animation 15s infinite alternate;
+    animation: bg-animation 4s infinite alternate;
     background: linear-gradient(
       45deg,
       rgb(47, 8, 66),
@@ -271,13 +275,13 @@ button[type="reset"] {
 // =====================
 .news_floor {
   display: flex;
-  margin-left: 1%;
   top: 0%;
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
   height: 350px;
-  width: 100%;
+  width: 98%;
+  margin-left: 1%;
   background-image: url(/Venturoimgs/Backgrounds/fjellside.jpg);
   background-position: bottom;
   background-size: cover;
@@ -335,7 +339,7 @@ button[type="reset"] {
 .last {
   display: flex;
   justify-content: center;
-  height: 510px;
+  height: 488px;
   background-color: white;
   &_sidebar1,
   &_sidebar2,
@@ -396,18 +400,41 @@ input[type="password"]:focus {
 // =====================
 // FORM BUTTONS
 // =====================
-.cancelbtn {
-  padding: 14px 20px;
-  background-color: #f44336;
+.modal-content {
+  position: relative;
+  top: 5.8%;
 }
-.cancelbtn,
+.cancelbtn {
+  background-color: #f44336;
+  border: none;
+  position: relative;
+  margin-top: 10px;
+  left: 26%;
+  height: 47px;
+  align-items: center;
+  width: 25%;
+}
 .signupbtn {
-  float: left;
-  width: 50%;
+  position: relative;
+  left: 27.5%;
+}
+.content_container {
+  padding: 16px;
   position: relative;
 }
-.container {
-  padding: 16px;
+.content_container h1 {
+  position: relative;
+  left: 42.8%;
+}
+.fill_in_text {
+  position: relative;
+  left: 34%;
+  color: darkblue;
+}
+.terms_privacy_text {
+  color: darkblue;
+  position: relative;
+  left: 31%;
 }
 .remember-checkbox {
   margin-bottom: 15px;

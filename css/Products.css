@@ -105,15 +105,17 @@ button[type=reset] {
   left: 40%;
 }
 
-input[type=search] {
+.search-content button {
+  background-color: black; /*Probleme here, we have this overrided by soemthing else idk now
+}
+input[type="search"] {
   width: 300px;
   height: 40px;
   padding: 0 10px;
   font-size: 16px;
   position: relative;
 }
-
-button[type=submit] {
+button[type="submit"] {
   width: 60px; /* sets the width of the search bar to 300px */
   height: 40px; /* sets the height of the search bar to 30px */
   padding: 0 10px; /* adds space within the search bar */
