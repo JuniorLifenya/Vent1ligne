@@ -79,6 +79,28 @@
     <footer>
       <p style="color: aliceblue">@Copyright 2023 My Website</p>
     </footer>
-    <script></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        document.body.classList.remove("zoom-out");
+      });
+
+      document.querySelectorAll("a").forEach((link) => {
+        const href = link.getAttribute("href");
+        if (
+          href &&
+          !href.startsWith("#") &&
+          !link.hasAttribute("target") &&
+          !href.startsWith("mailto:")
+        ) {
+          link.addEventListener("click", function (e) {
+            e.preventDefault();
+            document.body.classList.add("zoom-out");
+            setTimeout(() => {
+              window.location.href = href;
+            }, 500);
+          });
+        }
+      });
+    </script>
   </body>
 </html>

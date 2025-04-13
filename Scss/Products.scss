@@ -14,7 +14,16 @@ body {
   margin: 0;
   padding: 0;
   width: 100%;
+  transform: scale(1);
+  opacity: 1;
+  transition: transform 0.5s ease, opacity 0.5s ease;
 }
+
+body.zoom-out {
+  transform: scale(0.8);
+  opacity: 0;
+}
+
 main {
   @include mobile {
     flex-direction: column;

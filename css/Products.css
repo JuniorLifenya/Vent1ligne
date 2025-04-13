@@ -12,7 +12,7 @@ header {
   margin: 0 auto; /* Center header */
   padding: 0 20px; /* Add padding to avoid edge sticking */
   position: relative; /* Keep your existing animation/bg styles */
-  animation: fade-d 0.6s ease-in forwards, bg-animation 4s infinite alternate;
+  animation: fade-d 0.3s ease-in forwards, bg-animation 4s infinite alternate;
   background: linear-gradient(45deg, rgb(47, 8, 66), rgb(0, 91, 107), rgb(59, 19, 19));
   background-size: 400%;
 }
@@ -161,6 +161,14 @@ body {
   margin: 0;
   padding: 0;
   width: 100%;
+  transform: scale(1);
+  opacity: 1;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+body.zoom-out {
+  transform: scale(0.8);
+  opacity: 0;
 }
 
 main {
