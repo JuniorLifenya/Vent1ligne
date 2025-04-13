@@ -74,8 +74,17 @@ body {
   background-size: cover;
   background-position: center;
   font-family: sans-serif;
+  animation: fade-d 2.3s;
 }
 
+@keyframes fade-d {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity1: 1;
+  }
+}
 .homebutton li {
   border: 5px seagreen;
   width: 100px;

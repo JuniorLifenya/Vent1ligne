@@ -5,15 +5,26 @@
 }
 
 header {
-  height: 150px;
+  height: 145px;
   display: flex;
   width: 100%;
-  position: relative;
-  animation: bg-animation 5s infinite alternate;
+  max-width: auto; /* Match your site's max width */
+  margin: 0 auto; /* Center header */
+  padding: 0 20px; /* Add padding to avoid edge sticking */
+  position: relative; /* Keep your existing animation/bg styles */
+  animation: fade-d 0.6s ease-in forwards, bg-animation 4s infinite alternate;
   background: linear-gradient(45deg, rgb(47, 8, 66), rgb(0, 91, 107), rgb(59, 19, 19));
   background-size: 400%;
 }
 
+@keyframes fade-d {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 @keyframes bg-animation {
   0% {
     background-position: left;
@@ -105,17 +116,27 @@ button[type=reset] {
   left: 40%;
 }
 
-.search-content button {
-  background-color: black; /*Probleme here, we have this overrided by soemthing else idk now
+.search-content {
+  display: flex;
+  position: relative;
+  flex-flow: column;
 }
-input[type="search"] {
+
+.search-content form {
+  position: relative;
+  top: 37%;
+  left: 40%;
+}
+
+input[type=search] {
   width: 300px;
   height: 40px;
   padding: 0 10px;
   font-size: 16px;
   position: relative;
 }
-button[type="submit"] {
+
+button[type=submit] {
   width: 60px; /* sets the width of the search bar to 300px */
   height: 40px; /* sets the height of the search bar to 30px */
   padding: 0 10px; /* adds space within the search bar */

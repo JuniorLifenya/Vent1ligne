@@ -27,6 +27,26 @@ header {
   background-size: 400%;
 }
 
+@keyframes fallin {
+  from {
+    transform: translate(-20px, -20px);
+    opacity: 0.3;
+  }
+  to {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+}
+@keyframes fallin_invers {
+  from {
+    transform: translate(20px, -20px);
+    opacity: 0;
+  }
+  to {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+}
 @keyframes bg-animation {
   0% {
     background-position: left;
@@ -40,6 +60,7 @@ main {
   background-color: wheat;
   background-position: bottom;
   background-size: cover;
+  animation: pop_up 0.7s ease-in forwards;
 }
 @media (max-width: 800px) {
   main {
@@ -48,6 +69,16 @@ main {
   }
 }
 
+@keyframes pop_up {
+  from {
+    transform: translate(-20px, 20px);
+    opacity: 0.3;
+  }
+  to {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+}
 footer {
   height: 100px;
   background-color: rgb(0, 91, 107);
@@ -65,6 +96,7 @@ footer {
   height: 90px;
   position: relative;
   margin-right: 56px;
+  animation: fallin 0.7s ease-in forwards;
 }
 
 .logo_content h1 {
@@ -94,6 +126,7 @@ footer {
   padding: 7px;
   transition: transform 0.3s;
   margin-right: 25px;
+  animation: fallin_invers 0.7s ease-in forwards;
 }
 
 .navi1 li a {
@@ -234,7 +267,7 @@ button[type=reset] {
 
 .intromain h1 {
   top: 0%;
-  right: -12%;
+  left: 17.67%;
   font-size: 50px;
   position: relative;
   font-family: cursive;
@@ -367,7 +400,7 @@ input[type=password]:focus {
 
 .modal-content {
   position: relative;
-  top: 5.8%;
+  bottom: 6.2%;
 }
 
 .cancelbtn {
@@ -379,6 +412,12 @@ input[type=password]:focus {
   height: 47px;
   align-items: center;
   width: 25%;
+  cursor: pointer;
+}
+
+.cancelbtn:hover,
+.cancelbtn:focus {
+  color: rgb(211, 211, 211);
 }
 
 .signupbtn {
@@ -389,11 +428,6 @@ input[type=password]:focus {
 .content_container {
   padding: 16px;
   position: relative;
-}
-
-.content_container h1 {
-  position: relative;
-  left: 42.8%;
 }
 
 .fill_in_text {
@@ -438,6 +472,8 @@ input[type=password]:focus {
   height: 100%;
   overflow: auto;
   padding-top: 50px;
+  background-color: rgb(0, 0, 0); /*Color in the background while you are inside register*/
+  background-color: rgba(0, 0, 0, 0.55); /* Black w/ opacity */
 }
 
 .modal-content {
@@ -453,18 +489,26 @@ hr {
 }
 
 .close {
+  /*Close button(X) in the corner*/
   position: absolute;
-  right: 35px;
-  top: 15px;
-  font-size: 40px;
+  right: 40px;
+  top: 10px;
+  font-size: 50px;
   font-weight: bold;
-  color: #f1f1f1;
+  color: #5a3434;
+  cursor: pointer;
+}
+
+.modal-content h1 {
+  position: relative;
+  left: 44.2%;
+  width: 137px;
 }
 
 .close:hover,
 .close:focus {
-  color: #f44336;
-  cursor: pointer;
+  color: red;
+  width: auto;
 }
 
 .clearfix::after {

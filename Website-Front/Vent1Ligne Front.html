@@ -54,7 +54,7 @@
           class="intromain_button"
           onclick="document.getElementById('id01').style.display='block'"
         >
-          Registrer
+          Register/Inscrivez
         </button>
       </div>
 
@@ -84,15 +84,10 @@
 
       <!--Registrer format-->
       <div id="id01" class="modal">
-        <span
-          onclick="document.getElementById('id01').style.display='none'"
-          class="close"
-          title="Close Modal"
-          >&times;</span
-        >
         <form class="modal-content" action="/action_page.php">
+          <span class="close">&times;</span>
+          <h1>Sign Up</h1>
           <div class="content_container">
-            <h1>Sign Up</h1>
             <p class="fill_in_text">
               Please fill in this form to create an account.
             </p>
@@ -182,6 +177,18 @@
         // Hide the search bar dropdown after search
         searchDropdown.style.display = "none";
       });
+    });
+  </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      var modal = document.getElementById("id01");
+      var closeBtn = document.querySelector(".close");
+
+      if (closeBtn) {
+        closeBtn.addEventListener("click", function () {
+          modal.style.display = "none";
+        });
+      }
     });
   </script>
 </html>
