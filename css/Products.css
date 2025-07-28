@@ -1,9 +1,4 @@
 /*Kan bruke variabler slik*/
-* {
-  padding: 0;
-  margin: 0;
-}
-
 header {
   height: 145px;
   display: flex;
@@ -12,7 +7,7 @@ header {
   margin: 0 auto; /* Center header */
   padding: 0 20px; /* Add padding to avoid edge sticking */
   position: relative; /* Keep your existing animation/bg styles */
-  animation: fade-d 0.3s ease-in forwards, bg-animation 4s infinite alternate;
+  animation: bg-animation 4s infinite alternate;
   background: linear-gradient(45deg, rgb(47, 8, 66), rgb(0, 91, 107), rgb(59, 19, 19));
   background-size: 400%;
 }
@@ -53,16 +48,16 @@ header {
 }
 
 .navi1 {
-  /*Redigerer posisjonen til listen*/
   height: 142px;
   position: relative;
   top: 0%;
-  left: 9%;
-  width: 455px;
+  left: auto;
+  width: auto;
   list-style: none;
   align-items: center;
   justify-content: center;
   display: flex;
+  margin-left: auto;
 }
 
 .navi1 li {
@@ -161,14 +156,6 @@ body {
   margin: 0;
   padding: 0;
   width: 100%;
-  transform: scale(1);
-  opacity: 1;
-  transition: transform 0.5s ease, opacity 0.5s ease;
-}
-
-body.zoom-out {
-  transform: scale(0.8);
-  opacity: 0;
 }
 
 main {
@@ -249,6 +236,4 @@ main {
   background-color: wheat;
   height: 400px;
   margin-top: 10px;
-}
-
-/*# sourceMappingURL=Products.css.map */
+}/*# sourceMappingURL=Products.css.map */

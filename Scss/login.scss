@@ -1,4 +1,9 @@
+@import "./headers";
+
 * {
+  margin: 0;
+  padding: 0;
+  list-style: none;
   text-decoration: none;
 }
 .avatar {
@@ -15,7 +20,7 @@
   background-color: rgb(249, 203, 143);
   background-position: center;
   color: rgb(0, 0, 0);
-  top: 50%;
+  top: 70%;
   left: 50%;
   position: absolute;
   transform: translate(-50%, -50%);
@@ -62,12 +67,14 @@ input[type="password"] {
 body {
   margin: 0;
   padding: 0;
+  width: 100%;
   background-image: url(/Venturoimgs/Backgrounds/strand_fjell.jpg);
   background-size: cover;
   background-position: center;
   font-family: sans-serif;
   animation: fade-d 2.3s;
 }
+
 @keyframes fade-d {
   from {
     opacity: 0;
@@ -76,6 +83,7 @@ body {
     opacity1: 1;
   }
 }
+
 .homebutton li {
   border: 5px seagreen;
   width: 100px;

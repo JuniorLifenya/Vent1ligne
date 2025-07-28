@@ -303,7 +303,8 @@ button[type=reset] {
   flex: 1;
   max-width: 100%;
   height: auto;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .second {
@@ -515,6 +516,4 @@ hr {
   content: "";
   clear: both;
   display: table;
-}
-
-/*# sourceMappingURL=Vint1lineStyle.css.map */
+}/*# sourceMappingURL=Vint1lineStyle.css.map */
