@@ -1,14 +1,10 @@
 @import "./headers";
+
 footer {
   height: 100px;
   background-color: rgb(11, 74, 114);
 }
-* {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  text-decoration: none;
-}
+
 body {
   font-family: sans-serif;
   margin: 0;
@@ -21,10 +17,10 @@ main {
     flex-direction: column;
   }
   margin-top: 0px;
-  height: 1825px;
+  height: 100%;
   background-position: bottom;
   background-size: cover;
-  background-color: rgb(0, 211, 211);
+  background-color: rgb(0, 91, 107);
 }
 .First {
   /*Edits first floor*/

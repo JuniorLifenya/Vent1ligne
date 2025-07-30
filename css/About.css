@@ -1,6 +1,14 @@
 /*Kan bruke variabler slik*/
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
 header {
-  height: 145px;
+  height: 90px;
   display: flex;
   width: 100%;
   max-width: auto; /* Match your site's max width */
@@ -28,20 +36,19 @@ header {
     background-position: right;
   }
 }
-.logo_content img {
-  top: -1px;
-  left: 31px;
-  height: 90px;
-  position: relative;
-  margin-right: 56px;
-}
-
 .logo_content {
   display: inline-block;
   display: flex;
   align-items: center;
 }
-
+.logo_content img {
+  top: -1px;
+  left: 20px;
+  height: 78px;
+  position: relative;
+  margin-right: 56px;
+  animation: fallin 0.7s ease-in forwards;
+}
 .logo_content h1 {
   color: whitesmoke;
   font-family: Courier;
@@ -50,29 +57,29 @@ header {
 .navi1 {
   height: 142px;
   position: relative;
-  top: 0%;
-  left: auto;
-  width: auto;
+  top: -25%;
+  right: 1%;
   list-style: none;
   align-items: center;
   justify-content: center;
   display: flex;
   margin-left: auto;
 }
-
 .navi1 li {
-  /*Edit the entire list of links to the other pages*/
   display: inline-block;
   font-family: "Fjall One", sans-serif;
-  border: 3px solid whitesmoke;
+  border: 1px solid white;
   border-radius: 9px;
-  box-shadow: 7px 5px 7px 4px;
+  box-shadow: 7px 5px 7px 4px black;
   font-size: 26px;
   padding: 7px;
   transition: transform 0.3s;
   margin-right: 25px;
+  animation: fallin_invers 0.7s ease-in forwards;
 }
-
+.navi1 li a {
+  color: white;
+}
 .navi1 li:hover {
   background-color: rgb(228, 207, 167);
   transform: translateY(-5px);
@@ -144,13 +151,6 @@ footer {
   background-color: rgb(11, 74, 114);
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  text-decoration: none;
-}
-
 body {
   font-family: sans-serif;
   margin: 0;
@@ -185,19 +185,19 @@ main {
   justify-content: center;
   height: 700px;
   margin-bottom: 10px;
-  background-color: white;
+  background-color: rgb(0, 91, 107);
 }
 .First_leftbar {
   width: 65%;
   position: relative;
   height: 680px;
   position: relative;
+  background-color: rgba(255, 255, 255, 0.982);
   top: 1%;
   text-align: center;
   box-shadow: 7px 5px 7px 4px;
+  border-radius: 15px;
   font-family: cursive;
-  animation: bg-animation 5s infinite alternate;
-  background: linear-gradient(45deg, rgb(47, 8, 66), rgb(0, 91, 107), rgb(59, 19, 19));
   background-size: 400%;
 }
 .First_rightbar {
@@ -208,6 +208,21 @@ main {
   top: 1%;
 }
 
+.Second {
+  animation: bg-animation 4s infinite alternate;
+  background: linear-gradient(135deg, #1a2a6c, rgba(178, 43, 31, 0.9176470588), #521a6c);
+  height: 60%;
+  background-size: 300%;
+}
+
+@keyframes bg-animation {
+  0% {
+    background-position: left;
+  }
+  100% {
+    background-position: right;
+  }
+}
 .pic-box {
   display: flex;
   flex-direction: column;

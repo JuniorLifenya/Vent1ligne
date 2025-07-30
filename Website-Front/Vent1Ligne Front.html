@@ -47,25 +47,40 @@
 
     <!--Main content-->
     <main>
-      <!--Intro floor-->
-      <div class="intromain">
-        <h1>Welcome!</h1>
-        <button
-          class="intromain_button"
-          onclick="document.getElementById('id01').style.display='block'"
-        >
-          Register/Inscrivez
-        </button>
-      </div>
+      <!--Before this was Intro floor, but now we update to Hero section-->
+      <section class="hero">
+        <div class="hero_content">
+          <h1>Welcome to Vent1Line</h1>
+          <p>Your one-stop shop for all your needs!</p>
+          <button
+            class="hero_content_button"
+            onclick="document.getElementById('id01').style.display='block'"
+          >
+            Register/Inscrivez
+          </button>
+        </div>
+      </section>
 
-      <h1 class="mid">Nouvou produi</h1>
-      <!--News floor-->
-      <div class="news_floor">
-        <img src="/Venturoimgs/Les produit terrain/P1.jpg" alt="" />
-        <img src="/Venturoimgs/Les produit terrain/P2.jpg" alt="" />
-        <img src="/Venturoimgs/Les produit terrain/P3.jpg" alt="" />
-        <img src="/Venturoimgs/Les produit terrain/P4.jpg" alt="" />
-      </div>
+      <!--Earlier News floor we change to use section class instead-->
+      <!-- Replace news_floor with this -->
+
+      <section class="featured-products">
+        <h2>New Arrivals</h2>
+        <div class="product-card">
+          <div class="img-row">
+            <img src="/Venturoimgs/Les produit terrain/P1.jpg" alt="Product" />
+            <img src="/Venturoimgs/Les produit terrain/P2.jpg" alt="Product" />
+            <img src="/Venturoimgs/Les produit terrain/P3.jpg" alt="Product" />
+          </div>
+
+          <div class="product-info">
+            <h3>Terrain en Congo</h3>
+            <p class="price">$89.99</p>
+            <button>Add to Cart</button>
+          </div>
+        </div>
+        <!-- Repeat for other products -->
+      </section>
 
       <!--second_floor with sidbar-->
       <div class="second">

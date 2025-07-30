@@ -1,144 +1,4 @@
 /*Kan bruke variabler slik*/
-header {
-  height: 145px;
-  display: flex;
-  width: 100%;
-  max-width: auto; /* Match your site's max width */
-  margin: 0 auto; /* Center header */
-  padding: 0 20px; /* Add padding to avoid edge sticking */
-  position: relative; /* Keep your existing animation/bg styles */
-  animation: bg-animation 4s infinite alternate;
-  background: linear-gradient(45deg, rgb(47, 8, 66), rgb(0, 91, 107), rgb(59, 19, 19));
-  background-size: 400%;
-}
-
-@keyframes fade-d {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-@keyframes bg-animation {
-  0% {
-    background-position: left;
-  }
-  100% {
-    background-position: right;
-  }
-}
-.logo_content img {
-  top: -1px;
-  left: 31px;
-  height: 90px;
-  position: relative;
-  margin-right: 56px;
-}
-
-.logo_content {
-  display: inline-block;
-  display: flex;
-  align-items: center;
-}
-
-.logo_content h1 {
-  color: whitesmoke;
-  font-family: Courier;
-}
-
-.navi1 {
-  height: 142px;
-  position: relative;
-  top: 0%;
-  left: auto;
-  width: auto;
-  list-style: none;
-  align-items: center;
-  justify-content: center;
-  display: flex;
-  margin-left: auto;
-}
-
-.navi1 li {
-  /*Edit the entire list of links to the other pages*/
-  display: inline-block;
-  font-family: "Fjall One", sans-serif;
-  border: 3px solid whitesmoke;
-  border-radius: 9px;
-  box-shadow: 7px 5px 7px 4px;
-  font-size: 26px;
-  padding: 7px;
-  transition: transform 0.3s;
-  margin-right: 25px;
-}
-
-.navi1 li:hover {
-  background-color: rgb(228, 207, 167);
-  transform: translateY(-5px);
-}
-
-button[type=submit] {
-  width: 50%;
-  background-color: #4caf50;
-  color: white;
-  padding: 14px 20px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-button[type=reset] {
-  width: 50%;
-  background-color: #f44336;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.search-content {
-  display: flex;
-  position: relative;
-  flex-flow: column;
-}
-
-.search-content form {
-  position: relative;
-  top: 37%;
-  left: 40%;
-}
-
-.search-content {
-  display: flex;
-  position: relative;
-  flex-flow: column;
-}
-
-.search-content form {
-  position: relative;
-  top: 37%;
-  left: 40%;
-}
-
-input[type=search] {
-  width: 300px;
-  height: 40px;
-  padding: 0 10px;
-  font-size: 16px;
-  position: relative;
-}
-
-button[type=submit] {
-  width: 60px; /* sets the width of the search bar to 300px */
-  height: 40px; /* sets the height of the search bar to 30px */
-  padding: 0 10px; /* adds space within the search bar */
-  font-size: 16px;
-  background-color: rgb(0, 255, 238);
-}
-
 * {
   margin: 0;
   padding: 0;
@@ -158,17 +18,28 @@ button[type=submit] {
 .loginbox {
   width: 320px;
   height: 390px;
-  background-color: rgb(249, 203, 143);
+  animation: bg-animation 3s infinite alternate;
+  background: linear-gradient(45deg, rgb(47, 8, 66), rgb(0, 91, 107), rgb(59, 19, 19));
+  background-size: 300%;
   background-position: center;
-  color: rgb(0, 0, 0);
-  top: 70%;
+  color: rgb(255, 255, 255);
+  top: 50%;
   left: 50%;
+  border-radius: 15px;
   position: absolute;
   transform: translate(-50%, -50%);
   box-sizing: border-box;
   padding: 70px 30px;
 }
 
+@keyframes bg-animation {
+  0% {
+    background-position: left;
+  }
+  100% {
+    background-position: right;
+  }
+}
 .loginbox p {
   margin: 0;
   padding: 0;
@@ -176,7 +47,7 @@ button[type=submit] {
 }
 
 .loginbox a {
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
 }
 
 .loginbox input {

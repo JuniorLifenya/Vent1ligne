@@ -1,14 +1,10 @@
 @import "./headers";
+
 footer {
   height: 100px;
   background-color: rgb(11, 74, 114);
 }
-* {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  text-decoration: none;
-}
+
 body {
   font-family: sans-serif;
   margin: 0;
@@ -38,19 +34,20 @@ main {
   justify-content: center;
   height: 700px;
   margin-bottom: 10px;
-  background-color: white;
+  background-color: rgb(0, 91, 107);
+
   &_leftbar {
     width: 65%;
     position: relative;
     height: 680px;
     position: relative;
-
+    background-color: rgba(255, 255, 255, 0.982);
     top: 1%;
     text-align: center;
     box-shadow: 7px 5px 7px 4px;
+    border-radius: 15px;
     font-family: $headlines;
-    animation: bg-animation 5s infinite alternate;
-    background: $header-bg;
+
     background-size: 400%;
   }
   &_rightbar {
@@ -59,6 +56,20 @@ main {
     height: 680px;
     position: relative;
     top: 1%;
+  }
+}
+.Second {
+  animation: bg-animation 4s infinite alternate;
+  background: linear-gradient(135deg, #1a2a6c, #b22b1fea, #521a6c);
+  height: 60%;
+  background-size: 300%;
+}
+@keyframes bg-animation {
+  0% {
+    background-position: left;
+  }
+  100% {
+    background-position: right;
   }
 }
 

@@ -12,16 +12,16 @@ body {
   margin: 0;
   padding: 0;
   width: 100%;
+  background-color: wheat;
 }
 
-
 header {
-  height: 145px;
+  height: 90px;
   display: flex;
-  width: 100%;
   max-width: auto; /* Match your site's max width */
-  margin: 0 auto; /* Center header */
-  padding: 0 20px; /* Add padding to avoid edge sticking */
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5%; /* Add padding to avoid edge sticking */
   position: relative; /* Keep your existing animation/bg styles */
   animation: bg-animation 4s infinite alternate;
   background: linear-gradient(45deg, rgb(47, 8, 66), rgb(0, 91, 107), rgb(59, 19, 19));
@@ -57,8 +57,7 @@ header {
   }
 }
 main {
-  height: 1825px;
-  background-color: wheat;
+  height: 100%;
   background-position: bottom;
   background-size: cover;
   animation: pop_up 0.7s ease-in forwards;
@@ -90,16 +89,14 @@ footer {
   display: flex;
   align-items: center;
 }
-
 .logo_content img {
   top: -1px;
   left: 20px;
-  height: 90px;
+  height: 78px;
   position: relative;
   margin-right: 56px;
   animation: fallin 0.7s ease-in forwards;
 }
-
 .logo_content h1 {
   color: whitesmoke;
   font-family: Courier;
@@ -110,14 +107,12 @@ footer {
   position: relative;
   top: 0%;
   left: auto;
-  width: auto;
   list-style: none;
   align-items: center;
   justify-content: center;
   display: flex;
   margin-left: auto;
 }
-
 .navi1 li {
   display: inline-block;
   font-family: "Fjall One", sans-serif;
@@ -129,11 +124,9 @@ footer {
   margin-right: 25px;
   animation: fallin_invers 0.7s ease-in forwards;
 }
-
 .navi1 li a {
   color: white;
 }
-
 .navi1 li:hover {
   background-color: rgb(228, 207, 167);
   transform: translateY(-5px);
@@ -143,7 +136,6 @@ footer {
   height: 50px;
   background-color: rgb(133, 127, 125);
 }
-
 .nav2 button {
   border-radius: 0%;
   position: relative;
@@ -226,34 +218,35 @@ button[type=reset] {
   cursor: pointer;
 }
 
-.intromain {
+.hero {
   display: flex;
   position: relative;
   justify-content: center;
-  height: 220px;
+  height: 45vh;
   background-image: url(/Venturoimgs/Backgrounds/fjellside.jpg);
   background-position: center;
   background-size: cover;
   position: relative;
   border-radius: 8px;
+  border: 1px solid #ddd;
   width: 98%;
   margin-left: 1%;
-  top: 1%;
+  margin-top: 20px;
 }
-.intromain_button {
+.hero button {
   padding: 14px 60px;
   margin: 8px 0;
   border: none;
   cursor: pointer;
-  width: auto;
   height: 100px;
   opacity: 0.9;
   position: relative;
-  top: 30%;
-  left: -10%;
-  font-size: 40px;
+  top: 11%;
+  left: 9.9%;
+  font-size: 2.1rem;
   font-family: cursive;
-  border-radius: 20px;
+  font-weight: 600;
+  border-radius: 50px;
   box-shadow: 7px 7px 7px 5px black;
   transition: transform 0.8s;
   animation: bg-animation 4s infinite alternate;
@@ -261,51 +254,130 @@ button[type=reset] {
   background-size: 400%;
   color: white;
 }
-.intromain_button:hover {
-  opacity: 0.5;
-  transform: translate(5px, -10px);
+.hero button:hover {
+  opacity: 0.4;
+  transform: translateY(-3px);
 }
-
-.intromain h1 {
-  top: 0%;
-  left: 17.67%;
+.hero h1 {
+  top: 2%;
+  left: 1.5%;
   font-size: 50px;
   position: relative;
   font-family: cursive;
   color: white;
 }
-
-.mid {
-  color: white;
+.hero p {
   position: relative;
-  margin-left: 39%;
-  top: 4%;
-  font-size: 40px;
+  top: 5%;
+  left: 16.67%;
+  font-size: 20px;
+  color: white;
   font-family: cursive;
 }
 
-.news_floor {
-  display: flex;
-  top: 0%;
-  align-items: center;
-  justify-content: center;
-  box-sizing: border-box;
-  height: 350px;
-  width: 98%;
-  margin-left: 1%;
+.featured-products {
+  margin-top: 20px;
   background-image: url(/Venturoimgs/Backgrounds/fjellside.jpg);
   background-position: bottom;
   background-size: cover;
-  border-radius: 8px;
-  padding: 10px;
+  position: relative;
+  left: 10px;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  max-width: 98%;
+  height: 120vh;
+  overflow: hidden;
+}
+.featured-products h2 {
+  position: relative;
+  top: 7%;
+  left: 1%;
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: #ffffff;
 }
 
-.news_floor img {
-  flex: 1;
-  max-width: 100%;
-  height: auto;
-  -o-object-fit: cover;
-     object-fit: cover;
+.product-card {
+  display: flexbox;
+  flex-direction: row;
+  align-items: center;
+  position: relative;
+  top: 4%;
+  left: 7%;
+  opacity: 0.2;
+  width: 90%;
+  height: 85vh;
+  animation: bg-animation 4s infinite alternate;
+  background: linear-gradient(45deg, rgb(47, 8, 66), rgb(0, 91, 107), rgb(59, 19, 19));
+  border: 1px solid #ddd;
+  border-radius: 25px;
+  overflow: hidden; /*IDk why this is here, but it works*/
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.55);
+  transition: transform 0.9s, background 0.3s, box-shadow 0.3s;
+}
+.product-card:hover {
+  transform: 3s;
+  transform: translateY(-10px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.55);
+  opacity: 1;
+}
+.product-card .img-row {
+  width: 95%;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  top: 4%;
+  left: 2.5%;
+  background-color: rgba(135, 207, 235, 0.064);
+  justify-content: center;
+  border-radius: 15px;
+}
+.product-card .img-row img {
+  height: 52vh;
+  width: 60vh;
+  -o-object-fit: scale-down;
+     object-fit: scale-down; /*Very important for the pictures to fit */
+  margin-left: 2px;
+}
+.product-card .product-info {
+  background-color: rgba(135, 207, 235, 0.064);
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column; /* stack text elements vertically */
+  align-items: flex-start; /* left-align text */
+  position: relative;
+  top: 9%;
+  left: 0.67%;
+  margin-left: 20px;
+  padding: 10px;
+  width: 95%;
+  align-items: center;
+}
+.product-card .product-info h3 {
+  font-size: 1.2rem;
+  color: white;
+  margin-right: 5px;
+}
+.product-card .product-info .price {
+  padding: 0 20px;
+  font-weight: bold;
+  color: #04aa6d;
+  font-size: 1.3rem;
+}
+.product-card .product-info button {
+  width: calc(100% - 40px);
+  margin: 15px 20px;
+  padding: 10px;
+  background: #333;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.product-card .product-info button:hover {
+  background: #04aa6d;
 }
 
 .second {
@@ -402,7 +474,7 @@ input[type=password]:focus {
 
 .modal-content {
   position: relative;
-  bottom: 6.2%;
+  bottom: 4.2%;
 }
 
 .cancelbtn {
