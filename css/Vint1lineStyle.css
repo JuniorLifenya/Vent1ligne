@@ -16,11 +16,10 @@ body {
 }
 
 header {
-  height: 80px;
+  height: 90px;
   display: flex;
   max-width: auto;
   /* Match your site's max width */
-
   align-items: center;
   justify-content: space-between;
   padding: 0 5%;
@@ -98,27 +97,24 @@ footer {
 }
 
 .logo_content {
-
+  display: inline-block;
   display: flex;
   align-items: center;
-  gap: 15px;
-
-  img {
-    top: -1px;
-    left: 20px;
-    height: 68px;
-    position: relative;
-    margin-right: 56px;
-    animation: fallin 0.7s ease-in forwards;
-  }
-
-  h1 {
-    color: whitesmoke;
-    font-family: Courier;
-    letter-spacing: 1px;
-  }
 }
 
+.logo_content img {
+  top: -1px;
+  left: 20px;
+  height: 78px;
+  position: relative;
+  margin-right: 56px;
+  animation: fallin 0.7s ease-in forwards;
+}
+
+.logo_content h1 {
+  color: whitesmoke;
+  font-family: Courier;
+}
 
 .navi1 {
   height: 142px;
@@ -131,26 +127,27 @@ footer {
   display: flex;
   margin-left: auto;
   animation: fallin_invers 0.7s ease-in forwards;
+}
 
-  li {
-    display: inline-block;
-    font-family: "Fjall One", sans-serif;
-    border-radius: 9px;
-    box-shadow: 7px 5px 7px 4px black;
-    font-size: 26px;
-    padding: 7px;
-    margin-right: 25px;
+.navi1 li {
+  display: inline-block;
+  font-family: "Fjall One", sans-serif;
+  border-radius: 9px;
+  box-shadow: 7px 5px 7px 4px black;
+  font-size: 26px;
+  padding: 7px;
+  transition: transform 0.3s;
+  margin-right: 25px;
+}
 
-    a {
-      color: white;
-    }
-  }
+.navi1 li a {
+  color: white;
+}
 
-  li:hover {
-    background-color: rgb(228, 207, 167);
-    transform: translateY(-5px);
-    transition: transform 0.3s;
-  }
+.navi1 li:hover {
+  background-color: rgb(228, 207, 167);
+  transform: translateY(-5px);
+  transition: transform 0.3s ease;
 }
 
 .nav2 {
@@ -170,6 +167,7 @@ footer {
   top: 27%;
   border-radius: 9px;
   height: 67px;
+  align-items: left;
 }
 
 #searchButton {
@@ -189,15 +187,26 @@ footer {
 
 #searchDropdown {
   position: absolute;
-  height: 70px;
-  right: 120%;
-  top: -9%;
+  height: 65px;
+  right: 330%;
+  top: -60%;
   background-color: rgb(255, 255, 255);
   border-radius: 9px;
   padding: 5px;
-  display: none;
-  z-index: 999;
   width: 280px;
+  animation: SearchDropdown 0.3s ease;
+}
+
+@keyframes SearchDropdown {
+  from {
+    transform: translateX(30px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
 #searchInput {
@@ -244,7 +253,7 @@ button[type=reset] {
   display: flex;
   position: relative;
   justify-content: center;
-  height: 45vh;
+  height: 80vh;
   background-image: url(/Venturoimgs/Backgrounds/fjellside.jpg);
   background-position: center;
   background-size: cover;
@@ -519,70 +528,6 @@ input[type=password]:focus {
   outline: none;
 }
 
-.modal-content {
-  position: relative;
-  bottom: 4.2%;
-}
-
-.cancelbtn {
-  background-color: #f44336;
-  border: none;
-  position: relative;
-  margin-top: 10px;
-  left: 26%;
-  height: 47px;
-  align-items: center;
-  width: 25%;
-  cursor: pointer;
-}
-
-.cancelbtn:hover,
-.cancelbtn:focus {
-  color: rgb(211, 211, 211);
-}
-
-.signupbtn {
-  position: relative;
-  left: 27.5%;
-}
-
-.content_container {
-  padding: 16px;
-  position: relative;
-}
-
-.fill_in_text {
-  position: relative;
-  left: 34%;
-  color: darkblue;
-}
-
-.terms_privacy_text {
-  color: darkblue;
-  position: relative;
-  left: 31%;
-}
-
-.remember-checkbox {
-  margin-bottom: 15px;
-}
-
-.terms-link {
-  color: dodgerblue;
-  text-decoration: underline;
-  cursor: pointer;
-}
-
-.terms-link:hover {
-  color: #1e90ff;
-}
-
-.footer-text {
-  color: white;
-  font-size: 0.9rem;
-  text-align: center;
-}
-
 .modal {
   display: none;
   position: fixed;
@@ -600,14 +545,39 @@ input[type=password]:focus {
 }
 
 .modal-content {
-  background-color: #fefefe;
+  background-color: #02656e;
   margin: 5% auto 15% auto;
-  border: 1px solid #888;
+  border: 1px solid #fefefe;
   width: 80%;
+  max-width: 800px;
+  border-radius: 20px;
+  position: relative;
+  bottom: 3.35%;
+  width: 90%;
+  overflow: hidden;
+  animation: modalOpen 0.4s ease;
+}
+
+.modal-content h1 {
+  position: relative;
+  left: 44.05%;
+  width: 137px;
+}
+
+@keyframes modalOpen {
+  from {
+    transform: translateY(-60px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(-10);
+    opacity: 1;
+  }
 }
 
 hr {
-  border: 1px solid #f1f1f1;
+  border: 1px solid wheat;
   margin-bottom: 25px;
 }
 
@@ -622,22 +592,81 @@ hr {
   cursor: pointer;
 }
 
-.modal-content h1 {
-  position: relative;
-  left: 44.2%;
-  width: 137px;
-}
-
-.close:hover,
-.close:focus {
+.close:hover {
+  transform: rotate(90deg);
+  transition: transform 0.8s ease;
   color: red;
-  width: auto;
 }
 
 .clearfix::after {
   content: "";
   clear: both;
   display: table;
+}
+
+.cancelbtn {
+  background-color: #f44336;
+  border: none;
+  position: relative;
+  margin-top: 10px;
+  left: 26%;
+  height: 47px;
+  align-items: center;
+  width: 25%;
+  cursor: pointer;
+  border-radius: 20px;
+}
+
+.cancelbtn:hover,
+.cancelbtn:focus {
+  color: rgb(255, 255, 255);
+}
+
+.signupbtn {
+  position: relative;
+  left: 27.5%;
+  border-radius: 20px;
+}
+
+.signupbtn:hover {
+  color: white;
+}
+
+.content_container {
+  padding: 16px;
+  position: relative;
+}
+
+.fill_in_text {
+  position: relative;
+  left: 32.5%;
+  color: rgba(255, 255, 255, 0.845);
+}
+
+.terms_privacy_text {
+  color: rgb(255, 255, 255);
+  position: relative;
+  left: 26%;
+}
+
+.remember-checkbox {
+  margin-bottom: 15px;
+}
+
+.terms-link {
+  color: rgb(238, 239, 241);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.terms-link:hover {
+  color: #1e90ff;
+}
+
+.footer-text {
+  color: white;
+  font-size: 0.9rem;
+  text-align: center;
 }
 
 /*# sourceMappingURL=Vint1lineStyle.css.map */

@@ -1,11 +1,14 @@
 {
   "liveServer.settings.port": 5503,
   "cSpell.words": [
+    "cancelbtn",
     "Fjall",
     "Inscrivez",
     "invers",
     "loginbox",
     "navi",
-    "Registrer"
+    "Registrer",
+    "sidbar",
+    "signupbtn"
   ]
 }
