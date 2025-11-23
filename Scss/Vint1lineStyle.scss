@@ -136,6 +136,7 @@ footer {
   justify-content: center;
   display: flex;
   margin-left: auto;
+  animation: fallin_invers 0.7s ease-in forwards;
 
   li {
     display: inline-block;
@@ -146,7 +147,7 @@ footer {
     padding: 7px;
     transition: transform 0.3s;
     margin-right: 25px;
-    animation: fallin_invers 0.7s ease-in forwards;
+
   }
   li a {
     color: white;
@@ -154,6 +155,7 @@ footer {
   li:hover {
     background-color: rgb(228, 207, 167);
     transform: translateY(-5px);
+    transition: transform 0.3s ease;
   }
 }
 

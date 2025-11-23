@@ -13,24 +13,39 @@
   text-decoration: none;
   box-sizing: border-box;
 }
+// =====================
+// HEADER
+// =====================
 header {
   height: 90px;
   display: flex;
-  width: 100%;
   max-width: auto; /* Match your site's max width */
-  margin: 0 auto; /* Center header */
-  padding: 0 20px; /* Add padding to avoid edge sticking */
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5%; /* Add padding to avoid edge sticking */
   position: relative; /* Keep your existing animation/bg styles */
   animation: bg-animation 4s infinite alternate;
   background: $header-bg;
   background-size: 400%;
 }
 
-@keyframes fade-d {
+@keyframes fallin {
   from {
+    transform: translate(-20px, -20px);
+    opacity: 0.3;
+  }
+  to {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+}
+@keyframes fallin_invers {
+  from {
+    transform: translate(20px, -20px);
     opacity: 0;
   }
   to {
+    transform: translate(0, 0);
     opacity: 1;
   }
 }
@@ -42,6 +57,9 @@ header {
     background-position: right;
   }
 }
+// =====================
+// LOGO + NAVIGATION 1
+// =====================
 // =====================
 // LOGO + NAVIGATION 1
 // =====================
@@ -67,25 +85,25 @@ header {
 .navi1 {
   height: 142px;
   position: relative;
-  top: -25%;
-  right: 1%;
+  top: 0%;
+  left: auto;
   list-style: none;
   align-items: center;
   justify-content: center;
   display: flex;
   margin-left: auto;
+  animation: fallin_invers 0.7s ease-in forwards;
 
   li {
     display: inline-block;
     font-family: "Fjall One", sans-serif;
-    border: 1px solid white;
     border-radius: 9px;
     box-shadow: 7px 5px 7px 4px black;
     font-size: 26px;
     padding: 7px;
     transition: transform 0.3s;
     margin-right: 25px;
-    animation: fallin_invers 0.7s ease-in forwards;
+
   }
   li a {
     color: white;
@@ -93,6 +111,7 @@ header {
   li:hover {
     background-color: rgb(228, 207, 167);
     transform: translateY(-5px);
+    transition: transform 0.3s ease;
   }
 }
 
