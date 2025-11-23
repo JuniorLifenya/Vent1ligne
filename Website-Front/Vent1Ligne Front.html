@@ -196,15 +196,55 @@
       });
     });
   </script>
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      var modal = document.getElementById("id01");
-      var closeBtn = document.querySelector(".close");
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var modal = document.getElementById("id01");
+        var closeBtn = document.querySelector(".close");
 
-      if (closeBtn) {
-        closeBtn.addEventListener("click", function () {
-          modal.style.display = "none";
-        });
+        if (closeBtn) {
+          closeBtn.addEventListener("click", function () {
+            modal.style.display = "none";
+          });
+        }
+      });
+    </script>
+
+    //Setting up the supabase code for database handling
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script>
+    // 1. Initialize Supabase
+    const supabaseUrl = 'https://wxcjdhppshexjjysrnrm.supabase.co'
+    const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Ind4Y2pkaHBwc2hleGpqeXNybnJtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjM5MzE0NjIsImV4cCI6MjA3OTUwNzQ2Mn0.3cxTd3oQKusbNE6Py3eJTu6c9roOkWtobuE65taypWE'
+    const _supabase = supabase.createClient(supabaseUrl, supabaseKey)
+
+    // 2. Handle the Sign Up
+    const registerForm = document.querySelector('.modal-content'); // Make sure your form has this class
+
+    registerForm.addEventListener('submit', async function(e) {
+      e.preventDefault(); // Stop the page from reloading
+
+      // Get values from input fields
+      const email = document.querySelector('input[name="email"]').value;
+      const password = document.querySelector('input[name="psw"]').value;
+      const passwordRepeat = document.querySelector('input[name="psw-repeat"]').value;
+
+      // Check passwords match
+      if (password !== passwordRepeat) {
+        alert("Passwords do not match!");
+        return;
+      }
+
+      // 3. Send to Supabase
+      const { data, error } = await _supabase.auth.signUp({
+        email: email,
+        password: password,
+      })
+
+      if (error) {
+        alert("Error: " + error.message);
+      } else {
+        alert("Success! Check your email to confirm your account.");
+        document.getElementById('id01').style.display='none';
       }
     });
   </script>

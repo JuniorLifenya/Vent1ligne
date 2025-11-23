@@ -132,7 +132,7 @@ footer {
 }
 .navi1 li:hover {
   background-color: rgb(228, 207, 167);
-  transform: translateY(-5px);
+  transform: translateY(-3px);
   transition: transform 0.3s ease;
 }
 
@@ -148,38 +148,40 @@ footer {
 
 .searchBarContainer {
   position: relative;
-  left: 29%;
-  top: 27%;
-  border-radius: 9px;
-  height: 67px;
-  align-items: left;
+  display: inline-block;
 }
 
 #searchButton {
-  padding: 10px;
+  padding: 12px 10px;
   box-shadow: 7px 5px 7px 4px;
   font-size: 16px;
   cursor: pointer;
   border-radius: 9px;
   position: relative;
-  height: 60px;
+  height: 50px;
   background-color: #04aa6d;
-  width: 80px;
+  width: auto;
   border: none;
-  right: 170px;
-  top: -39px;
+  font-weight: 600;
+  right: auto;
+  top: auto;
+}
+#searchButton:hover {
+  background-color: rgb(2.8275862069, 120.1724137931, 77.0517241379);
+  transform: translateY(-2px);
 }
 
 #searchDropdown {
   position: absolute;
   height: 65px;
-  right: 330%;
-  top: -60%;
+  right: 130%;
+  top: -15%;
   background-color: rgb(255, 255, 255);
   border-radius: 9px;
   padding: 5px;
   width: 280px;
   animation: SearchDropdown 0.3s ease;
+  display: none;
 }
 
 @keyframes SearchDropdown {
