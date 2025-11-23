@@ -132,13 +132,14 @@ footer {
 .navi1 {
   height: 142px;
   position: relative;
-  top: 0%;
+  top: 0;
+  margin-left: 0;
+  display: flex;
   left: auto;
+  gap: 20px; 
   list-style: none;
   align-items: center;
   justify-content: center;
-  display: flex;
-  margin-left: auto;
   animation: fallin_invers 0.7s ease-in forwards;
 
   li {
