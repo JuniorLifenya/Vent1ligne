@@ -18,14 +18,11 @@ body {
 header {
   height: 90px;
   display: flex;
-  max-width: auto;
-  /* Match your site's max width */
+  max-width: auto; /* Match your site's max width */
   align-items: center;
   justify-content: space-between;
-  padding: 0 5%;
-  /* Add padding to avoid edge sticking */
-  position: relative;
-  /* Keep your existing animation/bg styles */
+  padding: 0 5%; /* Add padding to avoid edge sticking */
+  position: relative; /* Keep your existing animation/bg styles */
   animation: bg-animation 4s infinite alternate;
   background: linear-gradient(45deg, rgb(47, 8, 66), rgb(0, 91, 107), rgb(59, 19, 19));
   background-size: 400%;
@@ -36,42 +33,37 @@ header {
     transform: translate(-20px, -20px);
     opacity: 0.3;
   }
-
   to {
     transform: translate(0, 0);
     opacity: 1;
   }
 }
-
 @keyframes fallin_invers {
   from {
     transform: translate(20px, -20px);
     opacity: 0;
   }
-
   to {
     transform: translate(0, 0);
     opacity: 1;
   }
 }
-
 @keyframes bg-animation {
   0% {
     background-position: left;
   }
-
   100% {
     background-position: right;
   }
 }
-
 main {
-  height: 100%;
+  min-height: 100vh;
+  height: auto;
+  padding-bottom: 50px;
   background-position: bottom;
   background-size: cover;
   animation: pop_up 0.7s ease-in forwards;
 }
-
 @media (max-width: 800px) {
   main {
     /*If the page gets lower than 800px wide it changes flex direction*/
@@ -84,13 +76,11 @@ main {
     transform: translate(-20px, 20px);
     opacity: 0.3;
   }
-
   to {
     transform: translate(0, 0);
     opacity: 1;
   }
 }
-
 footer {
   height: 100px;
   background-color: rgb(0, 91, 107);
@@ -101,16 +91,14 @@ footer {
   display: flex;
   align-items: center;
 }
-
 .logo_content img {
   top: -1px;
   left: 20px;
-  height: 78px;
+  height: 71px;
   position: relative;
   margin-right: 56px;
   animation: fallin 0.7s ease-in forwards;
 }
-
 .logo_content h1 {
   color: whitesmoke;
   font-family: Courier;
@@ -119,16 +107,16 @@ footer {
 .navi1 {
   height: 142px;
   position: relative;
-  top: 0%;
+  top: 0;
+  margin-left: 0;
+  display: flex;
   left: auto;
+  gap: 20px;
   list-style: none;
   align-items: center;
   justify-content: center;
-  display: flex;
-  margin-left: auto;
   animation: fallin_invers 0.7s ease-in forwards;
 }
-
 .navi1 li {
   display: inline-block;
   font-family: "Fjall One", sans-serif;
@@ -139,11 +127,9 @@ footer {
   transition: transform 0.3s;
   margin-right: 25px;
 }
-
 .navi1 li a {
   color: white;
 }
-
 .navi1 li:hover {
   background-color: rgb(228, 207, 167);
   transform: translateY(-5px);
@@ -154,7 +140,6 @@ footer {
   height: 50px;
   background-color: rgb(133, 127, 125);
 }
-
 .nav2 button {
   border-radius: 0%;
   position: relative;
@@ -202,13 +187,11 @@ footer {
     transform: translateX(30px);
     opacity: 0;
   }
-
   to {
     transform: translateX(0);
     opacity: 1;
   }
 }
-
 #searchInput {
   padding: 10px;
   font-size: 23px;
@@ -264,7 +247,6 @@ button[type=reset] {
   margin-left: 1%;
   margin-top: 20px;
 }
-
 .hero button {
   padding: 14px 60px;
   margin: 8px 0;
@@ -286,12 +268,10 @@ button[type=reset] {
   background-size: 400%;
   color: white;
 }
-
 .hero button:hover {
   opacity: 0.4;
   transform: translateY(-3px);
 }
-
 .hero h1 {
   top: 2%;
   left: 1.5%;
@@ -300,7 +280,6 @@ button[type=reset] {
   font-family: cursive;
   color: white;
 }
-
 .hero p {
   position: relative;
   top: 5%;
@@ -323,7 +302,6 @@ button[type=reset] {
   height: 120vh;
   overflow: hidden;
 }
-
 .featured-products h2 {
   position: relative;
   top: 7%;
@@ -348,19 +326,16 @@ button[type=reset] {
   background: linear-gradient(45deg, rgb(47, 8, 66), rgb(0, 91, 107), rgb(59, 19, 19));
   border: 1px solid #ddd;
   border-radius: 25px;
-  overflow: hidden;
-  /*IDk why this is here, but it works*/
+  overflow: hidden; /*IDk why this is here, but it works*/
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.55);
   transition: transform 0.9s, background 0.3s, box-shadow 0.3s;
 }
-
 .product-card:hover {
   transform: 3s;
   transform: translateY(-10px);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.55);
   opacity: 1;
 }
-
 .product-card .img-row {
   width: 95%;
   display: flex;
@@ -372,24 +347,19 @@ button[type=reset] {
   justify-content: center;
   border-radius: 15px;
 }
-
 .product-card .img-row img {
   height: 52vh;
   width: 60vh;
   -o-object-fit: scale-down;
-  object-fit: scale-down;
-  /*Very important for the pictures to fit */
+     object-fit: scale-down; /*Very important for the pictures to fit */
   margin-left: 2px;
 }
-
 .product-card .product-info {
   background-color: rgba(135, 207, 235, 0.064);
   border-radius: 15px;
   display: flex;
-  flex-direction: column;
-  /* stack text elements vertically */
-  align-items: flex-start;
-  /* left-align text */
+  flex-direction: column; /* stack text elements vertically */
+  align-items: flex-start; /* left-align text */
   position: relative;
   top: 9%;
   left: 0.67%;
@@ -398,20 +368,17 @@ button[type=reset] {
   width: 95%;
   align-items: center;
 }
-
 .product-card .product-info h3 {
   font-size: 1.2rem;
   color: white;
   margin-right: 5px;
 }
-
 .product-card .product-info .price {
   padding: 0 20px;
   font-weight: bold;
   color: #04aa6d;
   font-size: 1.3rem;
 }
-
 .product-card .product-info button {
   width: calc(100% - 40px);
   margin: 15px 20px;
@@ -423,7 +390,6 @@ button[type=reset] {
   cursor: pointer;
   transition: background 0.3s;
 }
-
 .product-card .product-info button:hover {
   background: #04aa6d;
 }
@@ -435,7 +401,6 @@ button[type=reset] {
   height: 700px;
   background-color: white;
 }
-
 .second_sidebar1 {
   background-color: rgb(65, 65, 65);
   width: 35%;
@@ -444,7 +409,6 @@ button[type=reset] {
   margin-right: 10px;
   top: 1%;
 }
-
 .second_sidebar2 {
   background-color: rgb(65, 65, 65);
   width: 62%;
@@ -473,25 +437,19 @@ button[type=reset] {
   height: 488px;
   background-color: white;
 }
-
-.last_sidebar1,
-.last_sidebar2,
-.last_sidebar3 {
+.last_sidebar1, .last_sidebar2, .last_sidebar3 {
   background-color: aquamarine;
   height: 95%;
   margin-top: 10px;
 }
-
 .last_sidebar1 {
   width: 35%;
   margin-right: 10px;
 }
-
 .last_sidebar2 {
   width: 30%;
   margin-right: 10px;
 }
-
 .last_sidebar3 {
   width: 32%;
 }
@@ -538,10 +496,8 @@ input[type=password]:focus {
   height: 100%;
   overflow: auto;
   padding-top: 50px;
-  background-color: rgb(0, 0, 0);
-  /*Color in the background while you are inside register*/
-  background-color: rgba(0, 0, 0, 0.55);
-  /* Black w/ opacity */
+  background-color: rgb(0, 0, 0); /*Color in the background while you are inside register*/
+  background-color: rgba(0, 0, 0, 0.55); /* Black w/ opacity */
 }
 
 .modal-content {
@@ -557,7 +513,6 @@ input[type=password]:focus {
   overflow: hidden;
   animation: modalOpen 0.4s ease;
 }
-
 .modal-content h1 {
   position: relative;
   left: 44.05%;
@@ -569,13 +524,11 @@ input[type=password]:focus {
     transform: translateY(-60px);
     opacity: 0;
   }
-
   to {
     transform: translateY(-10);
     opacity: 1;
   }
 }
-
 hr {
   border: 1px solid wheat;
   margin-bottom: 25px;
@@ -591,7 +544,6 @@ hr {
   color: #5a3434;
   cursor: pointer;
 }
-
 .close:hover {
   transform: rotate(90deg);
   transition: transform 0.8s ease;
@@ -627,7 +579,6 @@ hr {
   left: 27.5%;
   border-radius: 20px;
 }
-
 .signupbtn:hover {
   color: white;
 }
@@ -667,6 +618,4 @@ hr {
   color: white;
   font-size: 0.9rem;
   text-align: center;
-}
-
-/*# sourceMappingURL=Vint1lineStyle.css.map */
+}/*# sourceMappingURL=Vint1lineStyle.css.map */
