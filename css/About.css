@@ -119,12 +119,6 @@ button[type=reset] {
   cursor: pointer;
 }
 
-.search-content {
-  display: flex;
-  position: relative;
-  flex-flow: column;
-}
-
 .search-content form {
   position: relative;
   top: 37%;
@@ -136,7 +130,6 @@ button[type=reset] {
   position: relative;
   flex-flow: column;
 }
-
 .search-content form {
   position: relative;
   top: 37%;
@@ -152,11 +145,13 @@ input[type=search] {
 }
 
 button[type=submit] {
-  width: 60px; /* sets the width of the search bar to 300px */
+  width: 55px; /* sets the width of the search bar to 300px */
   height: 40px; /* sets the height of the search bar to 30px */
-  padding: 0 10px; /* adds space within the search bar */
-  font-size: 16px;
+  padding: 0 3px; /* adds space within the search bar */
+  font-size: 13px;
   background-color: rgb(0, 255, 238);
+  color: black;
+  font-weight: 700;
 }
 
 footer {

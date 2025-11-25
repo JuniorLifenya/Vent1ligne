@@ -2,9 +2,105 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Vent1Line</title>
+    <link
+      rel="shortcut icon"
+      type="img/png"
+      href="/Venturoimgs/Les logos/Zomi.jpg"
+    />
+    <link rel="stylesheet" href="/css/Personal-page.css" />
   </head>
-  <body></body>
+  <body>
+    <header>
+      <div class="logo_content">
+        <img src="/Venturoimgs/Les logos/Zomi.jpg" />
+        <h1>Vent1Line</h1>
+      </div>
+
+      <!--Navigation-->
+      <div class="search-content">
+        <form action="/search" method="get">
+          <input
+            type="search"
+            id="search"
+            name="search"
+            placeholder="What are you looking for.."
+          />
+          <button class="sb" type="submit">Search</button>
+        </form>
+      </div>
+      <div av class="navi1">
+        <ul>
+          <li>
+            <a
+              href="/Website-Front/Vent1Ligne Front.html"
+              style="color: rgb(255, 255, 255)"
+              >Home</a
+            >
+          </li>
+          <li class="Contact">
+            <a href="/Contacts/About.html" style="color: rgb(255, 255, 255)"
+              >About</a
+            >
+          </li>
+          <li class="Contact">
+            <a
+              href="/For_Accounts/Log_in.html"
+              style="color: rgb(255, 255, 255)"
+              >Login</a
+            >
+          </li>
+        </ul>
+      </div>
+    </header>
+    <main>
+      <div class="First">
+        <!-- Edits the first floor/section-->
+        <div class="First_leftbar"></div>
+        <div class="First_rightbar">
+          <h1 style="color: rgb(0, 0, 0)">My account: </h1>
+          <p>Description ici:</p>
+        </div>
+      </div>
+      <div class="second">
+        <!-- Edits the second floor/section-->
+        <div class="second_leftbar">
+          <h1 style="color: rgb(0, 0, 0)">Terrain</h1>
+          <p>Description ici:</p>
+        </div>
+        <div class="second_rightbar"></div>
+      </div>
+      <div class="last">
+        <div class="last_floor"></div>
+      </div>
+    </main>
+
+    <footer>
+      <p style="color: aliceblue">@Copyright 2023 My Website</p>
+    </footer>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        document.body.classList.remove("zoom-out");
+      });
+
+      document.querySelectorAll("a").forEach((link) => {
+        const href = link.getAttribute("href");
+        if (
+          href &&
+          !href.startsWith("#") &&
+          !link.hasAttribute("target") &&
+          !href.startsWith("mailto:")
+        ) {
+          link.addEventListener("click", function (e) {
+            e.preventDefault();
+            document.body.classList.add("zoom-out");
+            setTimeout(() => {
+              window.location.href = href;
+            }, 500);
+          });
+        }
+      });
+    </script>
+  </body>
 </html>

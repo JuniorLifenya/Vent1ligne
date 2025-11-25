@@ -294,7 +294,7 @@ button[type=reset] {
 .featured-products {
   margin-top: 20px;
   background-image: url(/Venturoimgs/Backgrounds/fjellside.jpg);
-  background-position: bottom;
+  background-position: top;
   background-size: cover;
   position: relative;
   left: 10px;

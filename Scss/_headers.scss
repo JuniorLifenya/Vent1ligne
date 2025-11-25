@@ -57,9 +57,6 @@ header {
     background-position: right;
   }
 }
-// =====================
-// LOGO + NAVIGATION 1
-// =====================
 
 // =====================
 // LOGO + NAVIGATION 1
@@ -125,6 +122,7 @@ button[type="submit"] {
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  
 }
 
 button[type="reset"] {
@@ -137,11 +135,6 @@ button[type="reset"] {
   border-radius: 4px;
   cursor: pointer;
 }
-.search-content {
-  display: flex;
-  position: relative;
-  flex-flow: column;
-}
 .search-content form {
   position: relative;
   top: 37%;
@@ -151,13 +144,14 @@ button[type="reset"] {
   display: flex;
   position: relative;
   flex-flow: column;
+
+  form {
+  position: relative;
+  top: 37%;
+  left: 40%;
+}
 }
 
-.search-content form {
-  position: relative;
-  top: 37%;
-  left: 40%;
-}
 
 input[type="search"] {
   width: 300px;
@@ -168,9 +162,12 @@ input[type="search"] {
 }
 
 button[type="submit"] {
-  width: 60px; /* sets the width of the search bar to 300px */
+  width: 55px; /* sets the width of the search bar to 300px */
   height: 40px; /* sets the height of the search bar to 30px */
-  padding: 0 10px; /* adds space within the search bar */
-  font-size: 16px;
+  padding: 0 3px; /* adds space within the search bar */
+  font-size: 13px;
   background-color: rgb(0, 255, 238);
+  color:black;
+  font-weight: 700;
+
 }
