@@ -50,6 +50,8 @@
 }
 .loginbox a {
   color: rgb(255, 255, 255);
+  position: relative;
+  left: 6%;
 }
 .loginbox input {
   width: 100%;
@@ -67,10 +69,12 @@ input[type="password"] {
   border: none;
   outline: none;
   height: 40px;
-  background-color: rgb(24, 107, 159);
+  background-color: rgb(159, 62, 24);
   color: #fff;
   font-size: 18px;
   border-radius: 20px;
+
+  cursor: pointer;
 }
 .loginbox h1 {
   margin: 0;

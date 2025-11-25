@@ -1,87 +1,349 @@
-@import "./headers";
 
-footer {
-  height: 100px;
-  background-color: rgb(11, 74, 114);
+// =====================
+// IMPORTS & SETUP
+// =====================
+
+// Re-declaring variables if they aren't in headers (Just to be safe for this snippet)
+$header-bg: linear-gradient(45deg, rgb(47, 8, 66), rgb(0, 91, 107), rgb(59, 19, 19));
+$shadow-hard: 7px 5px 7px 4px rgba(0, 0, 0, 0.4);
+$shadow-soft: 0 10px 25px rgba(0, 0, 0, 0.2);
+
+
+
+@mixin mobile {
+  @media (max-width: $mobile) {
+    /*If the page gets lower than 800px wide it changes flex direction*/
+    @content;
+  }
 }
-
-body {
-  font-family: sans-serif;
+* {
   margin: 0;
   padding: 0;
-  width: 100%;
+  list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+// =====================
+// HEADER
+// =====================
+header {
+  height: 90px;
+  display: flex;
+  max-width: auto; /* Match your site's max width */
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2%; /* Add padding to avoid edge sticking */
+  position: relative; /* Keep your existing animation/bg styles */
+  animation: bg-animation 4s infinite alternate;
+  background: $header-bg;
+  background-size: 400%;
 }
 
+@keyframes fallin {
+  from {
+    transform: translate(-20px, -20px);
+    opacity: 0.3;
+  }
+  to {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+}
+@keyframes fallin_invers {
+  from {
+    transform: translate(20px, -20px);
+    opacity: 0;
+  }
+  to {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+}
+@keyframes bg-animation {
+  0% {
+    background-position: left;
+  }
+  100% {
+    background-position: right;
+  }
+}
+
+// =====================
+// LOGO + NAVIGATION 1
+// =====================
+.logo_content {
+  display: inline-block;
+  display: flex;
+  align-items: center;
+
+  img {
+    top: -1px;
+    left: 20px;
+    height: 71px;
+    position: relative;
+    margin-right: 56px;
+    animation: fallin 0.7s ease-in forwards;
+  }
+  h1 {
+    color: whitesmoke;
+    font-family: Courier;
+  }
+}
+
+.navi1 {
+  height: 142px;
+  position: relative;
+  top: 0%;
+  left: auto;
+  list-style: none;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  margin-left: auto;
+  animation: fallin_invers 0.7s ease-in forwards;
+
+  li {
+    display: inline-block;
+    font-family: "Fjall One", sans-serif;
+    border-radius: 9px;
+    box-shadow: 7px 5px 7px 4px rgb(4, 24, 36);
+    border: 1px solid  wheat;
+    font-size: 26px;
+    padding: 7px;
+    transition: transform 0.3s;
+    margin-right: 25px;
+    a{
+      color:rgb(255, 255, 255);
+    }
+    
+  }
+
+  li:hover {
+    background-color: rgb(228, 207, 167);
+    transform: rotate(5deg);
+    transition: transform 0.3s ease;
+    a{
+      color:black;
+    }
+  }
+}
+
+button[type="submit"] {
+  width: 50%;
+  background-color: #4caf50;
+  color: white;
+  padding: 14px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  
+}
+
+button[type="reset"] {
+  width: 50%;
+  background-color: #f44336;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.search-content form {
+  position: relative;
+  top: 37%;
+  left: 40%;
+}
+.search-content {
+  display: flex;
+  position: relative;
+  flex-flow: column;
+
+  form {
+  position: relative;
+  top: 37%;
+  left: 40%;
+}
+}
+
+
+input[type="search"] {
+  width: 300px;
+  height: 40px;
+  padding: 0 10px;
+  font-size: 16px;
+  position: relative;
+}
+
+button[type="submit"] {
+  width: 55px; /* sets the width of the search bar to 300px */
+  height: 40px; /* sets the height of the search bar to 30px */
+  padding: 0 3px; /* adds space within the search bar */
+  font-size: 13px;
+  background-color: rgb(0, 255, 238);
+  color:black;
+  font-weight: 700;
+
+}
+
+
+// =====================
+// MAIN CONTAINER
+// =====================
 main {
-  @include mobile {
-    flex-direction: column;
-  }
-  margin-top: 0px;
-  height: 100%;
-  background-position: bottom;
-  background-size: cover;
-  background-color: rgb(0, 91, 107);
+  
+  min-height: 100vh;
+  padding-bottom: 50px;
+  background-color: rgb(0, 91, 107); // Dark Teal background for contrast
+  background-image: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0));
+  
 }
+
+// =====================
+// SHARED DASHBOARD STYLES
+// =====================
+// We create a "card" look for all sections to keep it consistent
+.dashboard-section {
+  display: flex;
+  justify-content: center;
+  width: 90%;
+  max-width: 1200px;
+  margin: 40px auto; // Centers the block
+  border-radius: 20px;
+  overflow: hidden; // Keeps images inside rounded corners
+  box-shadow: $shadow-hard;
+  background-color: wheat; // Your signature color
+  transition: transform 0.3s ease;
+  
+  
+
+  // Cool hover effect for the whole card
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 10px 10px 20px rgba(0,0,0,0.5);
+  }
+}
+
+// =====================
+// 1. PROFILE SECTION (The "First")
+// =====================
 .First {
-  /*Edits first floor*/
-  display: flex;
-  justify-content: center;
-  height: 700px;
-  background-color: wheat;
+  @extend .dashboard-section; // Inherits styles from above
+  min-height: 500px; // Flexible height
+
   &_leftbar {
-    background-image: url(/Vent1imgs/Autre/levre-produi.jpg);
+    width: 40%;
+    background-image: url('/Venturoimgs/Les logos/blåavatar.png'); // Fallback or user image
+    background-size: cover;
     background-position: center;
-    width: 62%;
     position: relative;
-    height: 680px;
-    position: relative;
-    margin-right: 10px;
-    top: 1%;
-    border-radius: 3%;
+    border-right: 5px solid white;
+
   }
+
   &_rightbar {
-    width: 35%;
-    position: relative;
-    height: 680px;
-    position: relative;
-    top: 1%;
-    border-radius: 3%;
-    text-align: center;
-    font-family: $headlines;
+    width: 60%;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.9); // Slight transparency
+
+    
+
+    h1 {
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 2.5rem;
+      color: rgb(47, 8, 66);
+      margin-bottom: 10px;
+      border-bottom: 3px solid rgb(0, 91, 107);
+      display: inline-block;
+      width: fit-content;
+    }
+
+    h3 {
+      font-family: sans-serif;
+      color: #04aa6d; // Success Green
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #333;
+    }
   }
 }
+
+// =====================
+// 2. TERRAIN/STATS SECTION (The "Second")
+// =====================
 .second {
-  /*Edits second floor*/
-  display: flex;
-  margin-top: 10px;
-  justify-content: center;
-  height: 700px;
-  background-color: wheat;
+  @extend .dashboard-section;
+  min-height: 400px;
+
   &_leftbar {
-    width: 35%;
-    position: relative;
-    height: 680px;
-    position: relative;
-    margin-right: 10px;
-    top: 1%;
-    border-radius: 6%;
-    font-family: $headlines;
+    width: 50%;
+    padding: 40px;
+    background-color: rgb(240, 240, 240);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+   
+
+    h1 {
+      font-family: 'Fjall One', sans-serif;
+      font-size: 2rem;
+      color: #333;
+    }
   }
+
   &_rightbar {
-    border-radius: 6%;
-    animation: bg-animation 5s infinite alternate;
+    width: 50%;
+    // THIS is where we use your creative animation
     background: $header-bg;
     background-size: 400%;
-    width: 62%;
-    position: relative;
-    height: 680px;
-    position: relative;
-    top: 1%;
+    animation: bg-animation 8s infinite alternate; // Slower, smoother animation
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px black;
+
+   
+    
+    // Optional: Add a "Coming Soon" or graphic here
+    &::after {
+      content: "ACTIVE TERRAIN";
+      font-family: Courier;
+      letter-spacing: 2px;
+      border: 3px solid white;
+      padding: 10px 20px;
+    }
   }
 }
+
+// =====================
+// 3. FOOTER SECTION (The "Last")
+// =====================
 .last {
   display: flex;
-  background-color: wheat;
-  height: 400px;
-  margin-top: 10px;
+  justify-content: center;
+  margin-top: 40px;
+  
+  &_floor {
+    width: 90%;
+    height: 150px;
+    background-color: rgba(0,0,0,0.2); // See-through dark
+    border-radius: 15px;
+    border: 2px dashed rgba(255,255,255,0.3); // "Placeholder" look
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: wheat;
+    font-family: Courier;
+  }
 }

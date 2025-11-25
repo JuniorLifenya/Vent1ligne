@@ -1,4 +1,4 @@
-/*Kan bruke variabler slik*/
+@charset "UTF-8";
 * {
   margin: 0;
   padding: 0;
@@ -13,7 +13,7 @@ header {
   max-width: auto; /* Match your site's max width */
   align-items: center;
   justify-content: space-between;
-  padding: 0 5%; /* Add padding to avoid edge sticking */
+  padding: 0 2%; /* Add padding to avoid edge sticking */
   position: relative; /* Keep your existing animation/bg styles */
   animation: bg-animation 4s infinite alternate;
   background: linear-gradient(45deg, rgb(47, 8, 66), rgb(0, 91, 107), rgb(59, 19, 19));
@@ -82,20 +82,23 @@ header {
   display: inline-block;
   font-family: "Fjall One", sans-serif;
   border-radius: 9px;
-  box-shadow: 7px 5px 7px 4px rgb(14, 41, 39);
-  border: 7px white;
+  box-shadow: 7px 5px 7px 4px rgb(4, 24, 36);
+  border: 1px solid wheat;
   font-size: 26px;
   padding: 7px;
   transition: transform 0.3s;
   margin-right: 25px;
 }
 .navi1 li a {
-  color: white;
+  color: rgb(255, 255, 255);
 }
 .navi1 li:hover {
   background-color: rgb(228, 207, 167);
-  transform: translateY(-3px);
+  transform: rotate(5deg);
   transition: transform 0.3s ease;
+}
+.navi1 li:hover a {
+  color: black;
 }
 
 button[type=submit] {
@@ -154,94 +157,121 @@ button[type=submit] {
   font-weight: 700;
 }
 
-footer {
-  height: 100px;
-  background-color: rgb(11, 74, 114);
-}
-
-body {
-  font-family: sans-serif;
-  margin: 0;
-  padding: 0;
-  width: 100%;
-}
-
 main {
-  margin-top: 0px;
-  height: 100%;
-  background-position: bottom;
-  background-size: cover;
+  min-height: 100vh;
+  padding-bottom: 50px;
   background-color: rgb(0, 91, 107);
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0));
 }
-@media (max-width: 800px) {
-  main {
-    /*If the page gets lower than 800px wide it changes flex direction*/
-    flex-direction: column;
-  }
+
+.dashboard-section, .second, .First {
+  display: flex;
+  justify-content: center;
+  width: 90%;
+  max-width: 1200px;
+  margin: 40px auto;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 7px 5px 7px 4px rgba(0, 0, 0, 0.4);
+  background-color: wheat;
+  transition: transform 0.3s ease;
+}
+.dashboard-section:hover, .second:hover, .First:hover {
+  transform: translateY(-5px);
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
 }
 
 .First {
-  /*Edits first floor*/
-  display: flex;
-  justify-content: center;
-  height: 700px;
-  background-color: wheat;
+  min-height: 500px;
 }
 .First_leftbar {
-  background-image: url(/Vent1imgs/Autre/levre-produi.jpg);
+  width: 40%;
+  background-image: url("/Venturoimgs/Les logos/blåavatar.png");
+  background-size: cover;
   background-position: center;
-  width: 62%;
   position: relative;
-  height: 680px;
-  position: relative;
-  margin-right: 10px;
-  top: 1%;
-  border-radius: 3%;
+  border-right: 5px solid white;
 }
 .First_rightbar {
-  width: 35%;
-  position: relative;
-  height: 680px;
-  position: relative;
-  top: 1%;
-  border-radius: 3%;
-  text-align: center;
-  font-family: cursive;
+  width: 60%;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.9);
+}
+.First_rightbar h1 {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 2.5rem;
+  color: rgb(47, 8, 66);
+  margin-bottom: 10px;
+  border-bottom: 3px solid rgb(0, 91, 107);
+  display: inline-block;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.First_rightbar h3 {
+  font-family: sans-serif;
+  color: #04aa6d;
+  margin-bottom: 20px;
+}
+.First_rightbar p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #333;
 }
 
 .second {
-  /*Edits second floor*/
-  display: flex;
-  margin-top: 10px;
-  justify-content: center;
-  height: 700px;
-  background-color: wheat;
+  min-height: 400px;
 }
 .second_leftbar {
-  width: 35%;
-  position: relative;
-  height: 680px;
-  position: relative;
-  margin-right: 10px;
-  top: 1%;
-  border-radius: 6%;
-  font-family: cursive;
+  width: 50%;
+  padding: 40px;
+  background-color: rgb(240, 240, 240);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.second_leftbar h1 {
+  font-family: "Fjall One", sans-serif;
+  font-size: 2rem;
+  color: #333;
 }
 .second_rightbar {
-  border-radius: 6%;
-  animation: bg-animation 5s infinite alternate;
+  width: 50%;
   background: linear-gradient(45deg, rgb(47, 8, 66), rgb(0, 91, 107), rgb(59, 19, 19));
   background-size: 400%;
-  width: 62%;
-  position: relative;
-  height: 680px;
-  position: relative;
-  top: 1%;
+  animation: bg-animation 8s infinite alternate;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px black;
+}
+.second_rightbar::after {
+  content: "ACTIVE TERRAIN";
+  font-family: Courier;
+  letter-spacing: 2px;
+  border: 3px solid white;
+  padding: 10px 20px;
 }
 
 .last {
   display: flex;
-  background-color: wheat;
-  height: 400px;
-  margin-top: 10px;
+  justify-content: center;
+  margin-top: 40px;
+}
+.last_floor {
+  width: 90%;
+  height: 150px;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
+  border: 2px dashed rgba(255, 255, 255, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: wheat;
+  font-family: Courier;
 }/*# sourceMappingURL=Personal-page.css.map */

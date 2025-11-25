@@ -152,6 +152,8 @@ footer {
     transition: transform 0.3s;
     margin-right: 25px;
 
+    
+
   }
   li a {
     color: white;
@@ -160,6 +162,9 @@ footer {
     background-color: rgb(228, 207, 167);
     transform: translateY(-3px);
     transition: transform 0.3s ease;
+    a{
+      color:black;
+    }
   }
 }
 
@@ -343,7 +348,7 @@ button[type="reset"] {
 }
 
 .product-card {
-  display: flexbox;
+ 
   flex-direction: row;
   align-items: center;
   position: relative;

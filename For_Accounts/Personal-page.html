@@ -44,13 +44,9 @@
               >About</a
             >
           </li>
-          <li class="Contact">
-            <a
-              href="/For_Accounts/Log_in.html"
-              style="color: rgb(255, 255, 255)"
-              >Login</a
-            >
-          </li>
+          <li>
+              <a href="/Website-Front/Vent1Ligne Front.html" id="logout-btn" style="color: rgb(255, 255, 255)">Logout</a>
+            </li> 
         </ul>
       </div>
     </header>
@@ -59,8 +55,23 @@
         <!-- Edits the first floor/section-->
         <div class="First_leftbar"></div>
         <div class="First_rightbar">
-          <h1 style="color: rgb(0, 0, 0)">My account: </h1>
+          <h1 style="color: rgb(0, 0, 0)">My account</h1>
+          <h3 id="user-email-display" style="color: darkblue;">Loading user...</h3> 
           <p>Description ici:</p>
+          <!-- Hero Profile -->
+      <section class="hero-profile" id="about">
+        <div class="profile-image">
+          <img src="/path/to/your-photo.jpg" alt="Your Name">
+        </div>
+        <div class="profile-intro">
+          <h1>Your Name</h1>
+          <div class="title">Digital Explorer & Code Adventurer</div>
+          <p class="bio">
+            Passionate developer crafting digital experiences that bridge innovation and functionality. 
+            When I'm not coding, you'll find me exploring new technologies and conquering creative challenges.
+          </p>
+        </div>
+      </section>
         </div>
       </div>
       <div class="second">
@@ -101,6 +112,42 @@
           });
         }
       });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script>
+    // 1. Setup
+    const supabaseUrl = 'https://wxcjdhppshexjjysrnrm.supabase.co'
+    const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Ind4Y2pkaHBwc2hleGpqeXNybnJtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjM5MzE0NjIsImV4cCI6MjA3OTUwNzQ2Mn0.3cxTd3oQKusbNE6Py3eJTu6c9roOkWtobuE65taypWE'
+    const _supabase = supabase.createClient(supabaseUrl, supabaseKey)
+
+    // 2. THE BOUNCER (Check if user is logged in)
+    // async function checkUser() {
+    //   const { data: { session } } = await _supabase.auth.getSession();
+
+    //   if (!session) {
+    //     // If no session, kick them back to login
+    //     window.location.href = "/For_Accounts/Log_in.html";
+    //   } else {
+    //     // If allowed, show their email
+    //     const emailDisplay = document.getElementById('user-email-display');
+    //     if(emailDisplay) {
+    //       emailDisplay.innerText = "Welcome, " + session.user.email;
+    //     }
+    //   }
+    // }
+
+    // Run the check immediately when page loads
+    checkUser();
+
+    // 3. Logout Logic
+    const logoutBtn = document.getElementById('logout-btn');
+    if (logoutBtn) {
+      logoutBtn.addEventListener('click', async (e) => {
+        e.preventDefault();
+        const { error } = await _supabase.auth.signOut();
+        window.location.href = "/For_Accounts/Log_in.html";
+      });
+    }
     </script>
   </body>
 </html>

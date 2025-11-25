@@ -208,44 +208,61 @@
         }
       });
     </script>
-
+    
     //Setting up the supabase code for database handling
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-    <script>
-    // 1. Initialize Supabase
-    const supabaseUrl = 'https://wxcjdhppshexjjysrnrm.supabase.co'
-    const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Ind4Y2pkaHBwc2hleGpqeXNybnJtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjM5MzE0NjIsImV4cCI6MjA3OTUwNzQ2Mn0.3cxTd3oQKusbNE6Py3eJTu6c9roOkWtobuE65taypWE'
-    const _supabase = supabase.createClient(supabaseUrl, supabaseKey)
+<!-- Remove these lines: -->
+<!-- <script src="https://wxcjdhppshexjjysrnrm.supabase.co"></script> -->
+<!-- And the entire script below it -->
 
-    // 2. Handle the Sign Up
-    const registerForm = document.querySelector('.modal-content'); // Make sure your form has this class
+<!-- Add this instead: -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+  // Initialize Supabase - CORRECT WAY
+  const supabaseUrl = 'https://wxcjdhppshexjjysrnrm.supabase.co'
+  const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Ind4Y2pkaHBwc2hleGpqeXNybnJtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjM5MzE0NjIsImV4cCI6MjA3OTUwNzQ2Mn0.3cxTd3oQKusbNE6Py3eJTu6c9roOkWtobuE65taypWE'
+  const supabase = window.supabase.createClient(supabaseUrl, supabaseKey)
 
-    registerForm.addEventListener('submit', async function(e) {
-      e.preventDefault(); // Stop the page from reloading
+  // Handle registration form
+  document.addEventListener('DOMContentLoaded', function() {
+    const registerForm = document.querySelector('#id01 .modal-content');
+    
+    if (registerForm) {
+      registerForm.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        const email = document.querySelector('input[name="email"]').value;
+        const password = document.querySelector('input[name="psw"]').value;
+        const passwordRepeat = document.querySelector('input[name="psw-repeat"]').value;
 
-      // Get values from input fields
-      const email = document.querySelector('input[name="email"]').value;
-      const password = document.querySelector('input[name="psw"]').value;
-      const passwordRepeat = document.querySelector('input[name="psw-repeat"]').value;
+        // Check passwords match
+        if (password !== passwordRepeat) {
+          alert("Passwords do not match!");
+          return;
+        }
 
-      // Check passwords match
-      if (password !== passwordRepeat) {
-        alert("Passwords do not match!");
-        return;
-      }
+        console.log("Attempting to register:", email); // Debug log
 
-      // 3. Send to Supabase
-      const { data, error } = await _supabase.auth.signUp({
-        email: email,
-        password: password,
-      })
+        // Send to Supabase
+        try {
+          const { data, error } = await supabase.auth.signUp({
+            email: email,
+            password: password,
+          });
 
-      if (error) {
-        alert("Error: " + error.message);
-      } else {
-        alert("Success! Check your email to confirm your account.");
-        document.getElementById('id01').style.display='none';
-      }
-    });
-  </script>
+          if (error) {
+            alert("Error: " + error.message);
+            console.error("Supabase error:", error);
+          } else {
+            alert("Success! Check your email to confirm your account.");
+            document.getElementById('id01').style.display = 'none';
+            console.log("Registration success:", data);
+          }
+        } catch (err) {
+          alert("Network error: " + err.message);
+          console.error("Network error:", err);
+        }
+      });
+    }
+  });
+</script>
 </html>

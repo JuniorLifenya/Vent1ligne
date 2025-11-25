@@ -135,6 +135,9 @@ footer {
   transform: translateY(-3px);
   transition: transform 0.3s ease;
 }
+.navi1 li:hover a {
+  color: black;
+}
 
 .nav2 {
   height: 50px;
@@ -315,7 +318,6 @@ button[type=reset] {
 }
 
 .product-card {
-  display: flexbox;
   flex-direction: row;
   align-items: center;
   position: relative;
