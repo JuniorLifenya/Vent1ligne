@@ -1,21 +1,23 @@
-
 // =====================
-// IMPORTS & SETUP
+// IMPORTS & VARIABLES
 // =====================
-
-// Re-declaring variables if they aren't in headers (Just to be safe for this snippet)
-$header-bg: linear-gradient(45deg, rgb(47, 8, 66), rgb(0, 91, 107), rgb(59, 19, 19));
-$shadow-hard: 7px 5px 7px 4px rgba(0, 0, 0, 0.4);
-$shadow-soft: 0 10px 25px rgba(0, 0, 0, 0.2);
-
-
+@import "./headers"; 
+// THE PALETTE
+$vent-wheat: rgb(245, 222, 179);
+$vent-teal: rgb(0, 91, 107);
+$vent-dark: rgb(47, 8, 66);
+$shadow-hard: 10px 10px 0px 0px rgba(0, 0, 0, 1); // Hard, comic-book style shadow
+$shadow-glow: 0 0 15px rgba(0, 255, 238, 0.5);
 
 @mixin mobile {
-  @media (max-width: $mobile) {
-    /*If the page gets lower than 800px wide it changes flex direction*/
+  @media (max-width: 800px) {
     @content;
   }
 }
+
+// =====================
+// GLOBAL RESET
+// =====================
 * {
   margin: 0;
   padding: 0;
@@ -23,204 +25,62 @@ $shadow-soft: 0 10px 25px rgba(0, 0, 0, 0.2);
   text-decoration: none;
   box-sizing: border-box;
 }
-// =====================
-// HEADER
-// =====================
-header {
-  height: 90px;
-  display: flex;
-  max-width: auto; /* Match your site's max width */
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 2%; /* Add padding to avoid edge sticking */
-  position: relative; /* Keep your existing animation/bg styles */
-  animation: bg-animation 4s infinite alternate;
-  background: $header-bg;
-  background-size: 400%;
+
+body {
+  font-family: 'Courier New', Courier, monospace; // Forced Retro font
+  background-color: $vent-dark;
+  overflow-x: hidden;
 }
 
-@keyframes fallin {
-  from {
-    transform: translate(-20px, -20px);
-    opacity: 0.3;
-  }
-  to {
-    transform: translate(0, 0);
-    opacity: 1;
-  }
-}
-@keyframes fallin_invers {
-  from {
-    transform: translate(20px, -20px);
-    opacity: 0;
-  }
-  to {
-    transform: translate(0, 0);
-    opacity: 1;
-  }
-}
-@keyframes bg-animation {
-  0% {
-    background-position: left;
-  }
-  100% {
-    background-position: right;
-  }
-}
-
-// =====================
-// LOGO + NAVIGATION 1
-// =====================
-.logo_content {
-  display: inline-block;
-  display: flex;
-  align-items: center;
-
-  img {
-    top: -1px;
-    left: 20px;
-    height: 71px;
-    position: relative;
-    margin-right: 56px;
-    animation: fallin 0.7s ease-in forwards;
-  }
-  h1 {
-    color: whitesmoke;
-    font-family: Courier;
-  }
-}
-
-.navi1 {
-  height: 142px;
-  position: relative;
-  top: 0%;
-  left: auto;
-  list-style: none;
-  align-items: center;
-  justify-content: center;
-  display: flex;
-  margin-left: auto;
-  animation: fallin_invers 0.7s ease-in forwards;
-
-  li {
-    display: inline-block;
-    font-family: "Fjall One", sans-serif;
-    border-radius: 9px;
-    box-shadow: 7px 5px 7px 4px rgb(4, 24, 36);
-    border: 1px solid  wheat;
-    font-size: 26px;
-    padding: 7px;
-    transition: transform 0.3s;
-    margin-right: 25px;
-    a{
-      color:rgb(255, 255, 255);
-    }
-    
-  }
-
-  li:hover {
-    background-color: rgb(228, 207, 167);
-    transform: rotate(5deg);
-    transition: transform 0.3s ease;
-    a{
-      color:black;
-    }
-  }
-}
-
-button[type="submit"] {
-  width: 50%;
-  background-color: #4caf50;
-  color: white;
-  padding: 14px 20px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  
-}
-
-button[type="reset"] {
-  width: 50%;
-  background-color: #f44336;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-.search-content form {
-  position: relative;
-  top: 37%;
-  left: 40%;
-}
-.search-content {
-  display: flex;
-  position: relative;
-  flex-flow: column;
-
-  form {
-  position: relative;
-  top: 37%;
-  left: 40%;
-}
-}
-
-
-input[type="search"] {
-  width: 300px;
-  height: 40px;
-  padding: 0 10px;
-  font-size: 16px;
-  position: relative;
-}
-
-button[type="submit"] {
-  width: 55px; /* sets the width of the search bar to 300px */
-  height: 40px; /* sets the height of the search bar to 30px */
-  padding: 0 3px; /* adds space within the search bar */
-  font-size: 13px;
-  background-color: rgb(0, 255, 238);
-  color:black;
-  font-weight: 700;
-
-}
 
 
 // =====================
-// MAIN CONTAINER
+// MAIN & LAYOUT
 // =====================
 main {
-  
   min-height: 100vh;
-  padding-bottom: 50px;
-  background-color: rgb(0, 91, 107); // Dark Teal background for contrast
-  background-image: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0));
-  
+  padding: 50px 0;
+  background-color: $vent-teal;
+  background-image: repeating-linear-gradient(
+    45deg,
+    rgba(0,0,0,0.1) 0px,
+    rgba(0,0,0,0.1) 10px,
+    transparent 10px,
+    transparent 20px
+  ); // Industrial striped background
 }
 
-// =====================
-// SHARED DASHBOARD STYLES
-// =====================
-// We create a "card" look for all sections to keep it consistent
-.dashboard-section {
-  display: flex;
-  justify-content: center;
+// The Container Class
+.container-box {
   width: 90%;
-  max-width: 1200px;
-  margin: 40px auto; // Centers the block
-  border-radius: 20px;
-  overflow: hidden; // Keeps images inside rounded corners
-  box-shadow: $shadow-hard;
-  background-color: wheat; // Your signature color
-  transition: transform 0.3s ease;
+  max-width: 1400px;
+  margin: 0 auto 60px auto;
+  display: flex;
+  border: 4px solid $vent-dark;
+  background-color: $vent-wheat;
+  box-shadow: $shadow-hard; // The signature hard shadow
+  position: relative;
   
-  
+  @include mobile {
+    flex-direction: column;
+  }
 
-  // Cool hover effect for the whole card
-  &:hover {
-    transform: translateY(-5px);
-    box-shadow: 10px 10px 20px rgba(0,0,0,0.5);
+  // decorative screws in corners
+  &::before {
+    content: '+';
+    position: absolute;
+    top: 5px; left: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    color: $vent-dark;
+  }
+  &::after {
+    content: '+';
+    position: absolute;
+    bottom: 5px; right: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    color: $vent-dark;
   }
 }
 
@@ -228,122 +88,179 @@ main {
 // 1. PROFILE SECTION (The "First")
 // =====================
 .First {
-  @extend .dashboard-section; // Inherits styles from above
-  min-height: 500px; // Flexible height
+  @extend .container-box;
+  min-height: 550px;
+
+  &_leftbar {
+    width: 35%;
+    background-image: url('/Venturoimgs/Les logos/blåavatar.png');
+    background-size: cover;
+    background-position: center;
+    border-right: 4px solid $vent-dark;
+    filter: grayscale(20%) contrast(120%); // Gritty look
+    position: relative;
+    
+    // An overlay that makes it look like a screen
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: linear-gradient(to bottom, transparent 50%, rgba(0,0,0,0.3));
+    }
+
+    @include mobile {
+      width: 100%;
+      height: 300px;
+      border-right: none;
+      border-bottom: 4px solid $vent-dark;
+    }
+  }
+
+  &_rightbar {
+    width: 65%;
+    padding: 40px;
+    background: radial-gradient(circle, white, $vent-wheat);
+    
+    // Styling the new HTML structure you added
+    .hero-profile {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      
+      h1 {
+        font-family: "Fjall One", sans-serif;
+        font-size: 4rem;
+        line-height: 0.9;
+        color: $vent-dark;
+        text-shadow: 3px 3px 0px rgba(0,0,0,0.2);
+        margin: 0;
+      }
+
+      .title {
+        background: $vent-dark;
+        color: white;
+        padding: 5px 15px;
+        font-family: Courier;
+        font-weight: bold;
+        width: fit-content;
+        transform: rotate(-1deg);
+      }
+
+      .bio {
+        font-size: 1.2rem;
+        border-left: 5px solid $vent-teal;
+        padding-left: 20px;
+        margin-top: 20px;
+        font-style: italic;
+      }
+    }
+    
+    // The "Loading user" text
+    #user-email-display {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      font-family: Courier;
+      font-size: 0.8rem;
+      color: rgba(0,0,0,0.5);
+    }
+  }
+}
+
+// =====================
+// 2. TERRAIN SECTION (The "Second")
+// =====================
+.second {
+  @extend .container-box;
+  min-height: 450px;
 
   &_leftbar {
     width: 40%;
-    background-image: url('/Venturoimgs/Les logos/blåavatar.png'); // Fallback or user image
-    background-size: cover;
-    background-position: center;
-    position: relative;
-    border-right: 5px solid white;
+    background-color: #e6d2b5; // Slightly darker wheat
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-right: 4px solid $vent-dark;
 
+    h1 {
+      font-size: 3rem;
+      font-family: "Fjall One";
+      color: $vent-dark;
+    }
+
+    p {
+      margin-top: 20px;
+      font-family: Courier;
+    }
+
+    @include mobile {
+      width: 100%;
+      border-right: none;
+      border-bottom: 4px solid $vent-dark;
+    }
   }
 
   &_rightbar {
     width: 60%;
-    padding: 40px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    background: rgba(255, 255, 255, 0.9); // Slight transparency
-
-    
-
-    h1 {
-      font-family: 'Courier New', Courier, monospace;
-      font-size: 2.5rem;
-      color: rgb(47, 8, 66);
-      margin-bottom: 10px;
-      border-bottom: 3px solid rgb(0, 91, 107);
-      display: inline-block;
-      width: fit-content;
-    }
-
-    h3 {
-      font-family: sans-serif;
-      color: #04aa6d; // Success Green
-      margin-bottom: 20px;
-    }
-
-    p {
-      font-size: 1.1rem;
-      line-height: 1.6;
-      color: #333;
-    }
-  }
-}
-
-// =====================
-// 2. TERRAIN/STATS SECTION (The "Second")
-// =====================
-.second {
-  @extend .dashboard-section;
-  min-height: 400px;
-
-  &_leftbar {
-    width: 50%;
-    padding: 40px;
-    background-color: rgb(240, 240, 240);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-
-   
-
-    h1 {
-      font-family: 'Fjall One', sans-serif;
-      font-size: 2rem;
-      color: #333;
-    }
-  }
-
-  &_rightbar {
-    width: 50%;
-    // THIS is where we use your creative animation
-    background: $header-bg;
-    background-size: 400%;
-    animation: bg-animation 8s infinite alternate; // Slower, smoother animation
+    // THE PORTAL ANIMATION
+    background: linear-gradient(45deg, #ff0055, #000066, #00ffff);
+    background-size: 400% 400%;
+    animation: bg-animation 2s infinite alternate; // Fast, glitchy animation
+    position: relative;
+    overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
-    font-size: 1.5rem;
-    font-weight: bold;
-    text-shadow: 2px 2px 4px black;
 
-   
-    
-    // Optional: Add a "Coming Soon" or graphic here
+    // Scanline effect
+    &::before {
+      content: " ";
+      display: block;
+      position: absolute;
+      top: 0; left: 0; bottom: 0; right: 0;
+      background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+      z-index: 2;
+      background-size: 100% 2px, 3px 100%;
+      pointer-events: none;
+    }
+
     &::after {
-      content: "ACTIVE TERRAIN";
-      font-family: Courier;
-      letter-spacing: 2px;
+      content: "SYSTEM ACTIVE";
+      color: white;
       border: 3px solid white;
-      padding: 10px 20px;
+      padding: 10px 30px;
+      font-size: 2rem;
+      font-family: "Fjall One";
+      letter-spacing: 5px;
+      z-index: 3;
+      text-shadow: 0 0 10px white;
     }
   }
 }
 
 // =====================
-// 3. FOOTER SECTION (The "Last")
+// ANIMATIONS
 // =====================
-.last {
+@keyframes bg-animation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+// =====================
+// FOOTER
+// =====================
+footer {
+  height: 100px;
+  background-color: $vent-dark;
   display: flex;
+  align-items: center;
   justify-content: center;
-  margin-top: 40px;
+  border-top: 5px solid $vent-wheat;
   
-  &_floor {
-    width: 90%;
-    height: 150px;
-    background-color: rgba(0,0,0,0.2); // See-through dark
-    border-radius: 15px;
-    border: 2px dashed rgba(255,255,255,0.3); // "Placeholder" look
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: wheat;
+  p {
     font-family: Courier;
+    letter-spacing: 2px;
   }
 }

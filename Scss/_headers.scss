@@ -1,11 +1,25 @@
 @import "./variables";
-
+// =====================
+// IMPORTS & MIXINS
+// =====================
+@import "./variables";
 @mixin mobile {
   @media (max-width: $mobile) {
     /*If the page gets lower than 800px wide it changes flex direction*/
     @content;
   }
 }
+// THE PALETTE
+$vent-wheat: rgb(245, 222, 179);
+$vent-teal: rgb(0, 91, 107);
+$vent-dark: rgb(47, 8, 66);
+$shadow-hard: 10px 10px 0px 0px rgba(0, 0, 0, 1); // Hard, comic-book style shadow
+$shadow-glow: 0 0 15px rgba(0, 255, 238, 0.5);
+// REMINDER TO ME, THIS GETS MAPPED TO CSS AND THEN TO THE ACTUAL WEBSITE... SO EDIT HERE ( WHILE WATCHING OF COURSE) 
+
+// =====================
+// GLOBAL STYLES
+// =====================
 * {
   margin: 0;
   padding: 0;
@@ -13,11 +27,18 @@
   text-decoration: none;
   box-sizing: border-box;
 }
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
 // =====================
 // HEADER
 // =====================
 header {
-  height: 90px;
+  height: 100px;
   display: flex;
   max-width: auto; /* Match your site's max width */
   align-items: center;
@@ -27,6 +48,9 @@ header {
   animation: bg-animation 4s infinite alternate;
   background: $header-bg;
   background-size: 400%;
+  z-index: 10;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+  border-bottom: 4px solid $vent-wheat;
 }
 
 @keyframes fallin {
@@ -59,6 +83,111 @@ header {
 }
 
 // =====================
+// MAIN SECTION
+// =====================
+main {
+  @include mobile {
+    flex-direction: column;
+  }
+  min-height: 100vh;
+  padding: 50px 0;
+  background-color: $vent-teal;
+  background-image: repeating-linear-gradient(
+    45deg,
+    rgba(0,0,0,0.1) 0px,
+    rgba(0,0,0,0.1) 10px,
+    transparent 10px,
+    transparent 20px
+  ); // Industrial striped background
+}
+@keyframes pop_up {
+  from {
+    transform: translate(-20px, 20px);
+    opacity: 0.3;
+  }
+  to {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+}
+
+// =====================
+// FOOTER
+// =====================
+footer {
+  height: 100px;
+  background-color: rgb(0, 91, 107);
+}
+
+// =====================
+// LOGO + NAVIGATION 1
+// =====================
+.logo_content {
+  display: flex;
+  align-items: center;
+  
+  img {
+    
+    left: 20px;
+    height: 70px;
+    border: 2px solid white;
+    position: relative;
+    margin-right: 30px;
+    animation: fallin 0.7s ease-in forwards;
+    box-shadow: 4px 4px 0 black; // Hard shadow on logo
+    border-radius: 9px;
+  }
+    h1 {
+      color: $vent-wheat;
+      font-family: 'Courier New', Courier, monospace;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: -2px;
+    }
+}
+
+.navi1 {
+   ul {
+    display: flex;
+    gap: 15px;
+  }
+  height: 142px;
+  position: relative;
+  top: 0;
+  margin-left: 0;
+  display: flex;
+  left: auto;
+  list-style: none;
+  align-items: center;
+  justify-content: center;
+  animation: fallin_invers 0.7s ease-in forwards;
+  
+
+  li {
+    display: inline-block;
+    font-family: "Fjall One", sans-serif;
+    border-radius: 9px;
+    box-shadow: 7px 5px 7px 4px black;
+    font-size: 26px;
+    padding: 5px 10px;
+    transition: transform 0.3s;
+    transform: skew(-3deg); // Angled buttons
+    
+  }
+  li a {
+    color: white;
+  }
+  li:hover {
+    background-color: rgb(228, 207, 167);
+    transform: translateY(-3px);
+    transition: transform 0.3s ease;
+    a{
+      color:black;
+    }
+  }
+}
+
+// =====================
 // LOGO + NAVIGATION 1
 // =====================
 .logo_content {
@@ -73,6 +202,7 @@ header {
     position: relative;
     margin-right: 56px;
     animation: fallin 0.7s ease-in forwards;
+    border-radius: 9px;
   }
   h1 {
     color: whitesmoke;
@@ -97,9 +227,9 @@ header {
     font-family: "Fjall One", sans-serif;
     border-radius: 9px;
     box-shadow: 7px 5px 7px 4px rgb(14, 41, 39);
-    border: 1px solid rgb(255, 255, 255);
+    border: 2.21px solid rgb(245, 222, 179);
     font-size: 26px;
-    padding: 7px;
+    padding: 8px 20px;
     transition: transform 0.3s;
     margin-right: 25px;
     a{
@@ -143,6 +273,7 @@ button[type="reset"] {
   position: relative;
   top: 37%;
   left: 40%;
+  
 }
 .search-content {
   display: flex;
@@ -153,6 +284,7 @@ button[type="reset"] {
   position: relative;
   top: 37%;
   left: 40%;
+  
 }
 }
 
@@ -163,6 +295,7 @@ input[type="search"] {
   padding: 0 10px;
   font-size: 16px;
   position: relative;
+  border-radius: 20px;
 }
 
 button[type="submit"] {
@@ -173,5 +306,5 @@ button[type="submit"] {
   background-color: rgb(0, 255, 238);
   color:black;
   font-weight: 700;
-
+  border-radius: 20px;
 }

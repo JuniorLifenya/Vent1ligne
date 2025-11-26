@@ -1,4 +1,6 @@
 @charset "UTF-8";
+/*Kan bruke variabler slik*/
+/*Kan bruke variabler slik*/
 * {
   margin: 0;
   padding: 0;
@@ -7,17 +9,27 @@
   box-sizing: border-box;
 }
 
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
 header {
-  height: 90px;
+  height: 100px;
   display: flex;
   max-width: auto; /* Match your site's max width */
   align-items: center;
   justify-content: space-between;
-  padding: 0 2%; /* Add padding to avoid edge sticking */
+  padding: 0 5%; /* Add padding to avoid edge sticking */
   position: relative; /* Keep your existing animation/bg styles */
   animation: bg-animation 4s infinite alternate;
   background: linear-gradient(45deg, rgb(47, 8, 66), rgb(0, 91, 107), rgb(59, 19, 19));
   background-size: 400%;
+  z-index: 10;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+  border-bottom: 4px solid rgb(245, 222, 179);
 }
 
 @keyframes fallin {
@@ -48,6 +60,94 @@ header {
     background-position: right;
   }
 }
+main {
+  min-height: 100vh;
+  padding: 50px 0;
+  background-color: rgb(0, 91, 107);
+  background-image: repeating-linear-gradient(45deg, rgba(0, 0, 0, 0.1) 0px, rgba(0, 0, 0, 0.1) 10px, transparent 10px, transparent 20px);
+}
+@media (max-width: 800px) {
+  main {
+    /*If the page gets lower than 800px wide it changes flex direction*/
+    flex-direction: column;
+  }
+}
+
+@keyframes pop_up {
+  from {
+    transform: translate(-20px, 20px);
+    opacity: 0.3;
+  }
+  to {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+}
+footer {
+  height: 100px;
+  background-color: rgb(0, 91, 107);
+}
+
+.logo_content {
+  display: flex;
+  align-items: center;
+}
+.logo_content img {
+  left: 20px;
+  height: 70px;
+  border: 2px solid white;
+  position: relative;
+  margin-right: 30px;
+  animation: fallin 0.7s ease-in forwards;
+  box-shadow: 4px 4px 0 black;
+  border-radius: 9px;
+}
+.logo_content h1 {
+  color: rgb(245, 222, 179);
+  font-family: "Courier New", Courier, monospace;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -2px;
+}
+
+.navi1 {
+  height: 142px;
+  position: relative;
+  top: 0;
+  margin-left: 0;
+  display: flex;
+  left: auto;
+  list-style: none;
+  align-items: center;
+  justify-content: center;
+  animation: fallin_invers 0.7s ease-in forwards;
+}
+.navi1 ul {
+  display: flex;
+  gap: 15px;
+}
+.navi1 li {
+  display: inline-block;
+  font-family: "Fjall One", sans-serif;
+  border-radius: 9px;
+  box-shadow: 7px 5px 7px 4px black;
+  font-size: 26px;
+  padding: 5px 10px;
+  transition: transform 0.3s;
+  transform: skew(-3deg);
+}
+.navi1 li a {
+  color: white;
+}
+.navi1 li:hover {
+  background-color: rgb(228, 207, 167);
+  transform: translateY(-3px);
+  transition: transform 0.3s ease;
+}
+.navi1 li:hover a {
+  color: black;
+}
+
 .logo_content {
   display: inline-block;
   display: flex;
@@ -60,6 +160,7 @@ header {
   position: relative;
   margin-right: 56px;
   animation: fallin 0.7s ease-in forwards;
+  border-radius: 9px;
 }
 .logo_content h1 {
   color: whitesmoke;
@@ -82,10 +183,10 @@ header {
   display: inline-block;
   font-family: "Fjall One", sans-serif;
   border-radius: 9px;
-  box-shadow: 7px 5px 7px 4px rgb(4, 24, 36);
-  border: 1px solid wheat;
+  box-shadow: 7px 5px 7px 4px rgb(14, 41, 39);
+  border: 2.21px solid rgb(245, 222, 179);
   font-size: 26px;
-  padding: 7px;
+  padding: 8px 20px;
   transition: transform 0.3s;
   margin-right: 25px;
 }
@@ -94,7 +195,7 @@ header {
 }
 .navi1 li:hover {
   background-color: rgb(228, 207, 167);
-  transform: rotate(5deg);
+  transform: translateY(-3px);
   transition: transform 0.3s ease;
 }
 .navi1 li:hover a {
@@ -145,6 +246,7 @@ input[type=search] {
   padding: 0 10px;
   font-size: 16px;
   position: relative;
+  border-radius: 20px;
 }
 
 button[type=submit] {
@@ -155,123 +257,221 @@ button[type=submit] {
   background-color: rgb(0, 255, 238);
   color: black;
   font-weight: 700;
+  border-radius: 20px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Courier New", Courier, monospace;
+  background-color: rgb(47, 8, 66);
+  overflow-x: hidden;
 }
 
 main {
   min-height: 100vh;
-  padding-bottom: 50px;
+  padding: 50px 0;
   background-color: rgb(0, 91, 107);
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0));
+  background-image: repeating-linear-gradient(45deg, rgba(0, 0, 0, 0.1) 0px, rgba(0, 0, 0, 0.1) 10px, transparent 10px, transparent 20px);
 }
 
-.dashboard-section, .second, .First {
-  display: flex;
-  justify-content: center;
+.container-box, .second, .First {
   width: 90%;
-  max-width: 1200px;
-  margin: 40px auto;
-  border-radius: 20px;
-  overflow: hidden;
-  box-shadow: 7px 5px 7px 4px rgba(0, 0, 0, 0.4);
-  background-color: wheat;
-  transition: transform 0.3s ease;
+  max-width: 1400px;
+  margin: 0 auto 60px auto;
+  display: flex;
+  border: 4px solid rgb(47, 8, 66);
+  background-color: rgb(245, 222, 179);
+  box-shadow: 10px 10px 0px 0px rgb(0, 0, 0);
+  position: relative;
 }
-.dashboard-section:hover, .second:hover, .First:hover {
-  transform: translateY(-5px);
-  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+@media (max-width: 800px) {
+  .container-box, .second, .First {
+    flex-direction: column;
+  }
+}
+.container-box::before, .second::before, .First::before {
+  content: "+";
+  position: absolute;
+  top: 5px;
+  left: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  color: rgb(47, 8, 66);
+}
+.container-box::after, .second::after, .First::after {
+  content: "+";
+  position: absolute;
+  bottom: 5px;
+  right: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  color: rgb(47, 8, 66);
 }
 
 .First {
-  min-height: 500px;
+  min-height: 550px;
 }
 .First_leftbar {
-  width: 40%;
+  width: 35%;
   background-image: url("/Venturoimgs/Les logos/blåavatar.png");
   background-size: cover;
   background-position: center;
+  border-right: 4px solid rgb(47, 8, 66);
+  filter: grayscale(20%) contrast(120%);
   position: relative;
-  border-right: 5px solid white;
+}
+.First_leftbar::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, transparent 50%, rgba(0, 0, 0, 0.3));
+}
+@media (max-width: 800px) {
+  .First_leftbar {
+    width: 100%;
+    height: 300px;
+    border-right: none;
+    border-bottom: 4px solid rgb(47, 8, 66);
+  }
 }
 .First_rightbar {
-  width: 60%;
+  width: 65%;
   padding: 40px;
+  background: radial-gradient(circle, white, rgb(245, 222, 179));
+}
+.First_rightbar .hero-profile {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  background: rgba(255, 255, 255, 0.9);
+  gap: 20px;
 }
-.First_rightbar h1 {
-  font-family: "Courier New", Courier, monospace;
-  font-size: 2.5rem;
+.First_rightbar .hero-profile h1 {
+  font-family: "Fjall One", sans-serif;
+  font-size: 4rem;
+  line-height: 0.9;
   color: rgb(47, 8, 66);
-  margin-bottom: 10px;
-  border-bottom: 3px solid rgb(0, 91, 107);
-  display: inline-block;
+  text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.2);
+  margin: 0;
+}
+.First_rightbar .hero-profile .title {
+  background: rgb(47, 8, 66);
+  color: white;
+  padding: 5px 15px;
+  font-family: Courier;
+  font-weight: bold;
   width: -moz-fit-content;
   width: fit-content;
+  transform: rotate(-1deg);
 }
-.First_rightbar h3 {
-  font-family: sans-serif;
-  color: #04aa6d;
-  margin-bottom: 20px;
+.First_rightbar .hero-profile .bio {
+  font-size: 1.2rem;
+  border-left: 5px solid rgb(0, 91, 107);
+  padding-left: 20px;
+  margin-top: 20px;
+  font-style: italic;
 }
-.First_rightbar p {
-  font-size: 1.1rem;
-  line-height: 1.6;
-  color: #333;
+.First_rightbar #user-email-display {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-family: Courier;
+  font-size: 0.8rem;
+  color: rgba(0, 0, 0, 0.5);
 }
 
 .second {
-  min-height: 400px;
+  min-height: 450px;
 }
 .second_leftbar {
-  width: 50%;
+  width: 40%;
+  background-color: #e6d2b5;
   padding: 40px;
-  background-color: rgb(240, 240, 240);
   display: flex;
   flex-direction: column;
   justify-content: center;
+  border-right: 4px solid rgb(47, 8, 66);
 }
 .second_leftbar h1 {
-  font-family: "Fjall One", sans-serif;
-  font-size: 2rem;
-  color: #333;
+  font-size: 3rem;
+  font-family: "Fjall One";
+  color: rgb(47, 8, 66);
+}
+.second_leftbar p {
+  margin-top: 20px;
+  font-family: Courier;
+}
+@media (max-width: 800px) {
+  .second_leftbar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 4px solid rgb(47, 8, 66);
+  }
 }
 .second_rightbar {
-  width: 50%;
-  background: linear-gradient(45deg, rgb(47, 8, 66), rgb(0, 91, 107), rgb(59, 19, 19));
-  background-size: 400%;
-  animation: bg-animation 8s infinite alternate;
+  width: 60%;
+  background: linear-gradient(45deg, #ff0055, #000066, #00ffff);
+  background-size: 400% 400%;
+  animation: bg-animation 2s infinite alternate;
+  position: relative;
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
-  font-size: 1.5rem;
-  font-weight: bold;
-  text-shadow: 2px 2px 4px black;
+}
+.second_rightbar::before {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+  z-index: 2;
+  background-size: 100% 2px, 3px 100%;
+  pointer-events: none;
 }
 .second_rightbar::after {
-  content: "ACTIVE TERRAIN";
-  font-family: Courier;
-  letter-spacing: 2px;
+  content: "SYSTEM ACTIVE";
+  color: white;
   border: 3px solid white;
-  padding: 10px 20px;
+  padding: 10px 30px;
+  font-size: 2rem;
+  font-family: "Fjall One";
+  letter-spacing: 5px;
+  z-index: 3;
+  text-shadow: 0 0 10px white;
 }
 
-.last {
-  display: flex;
-  justify-content: center;
-  margin-top: 40px;
+@keyframes bg-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
-.last_floor {
-  width: 90%;
-  height: 150px;
-  background-color: rgba(0, 0, 0, 0.2);
-  border-radius: 15px;
-  border: 2px dashed rgba(255, 255, 255, 0.3);
+footer {
+  height: 100px;
+  background-color: rgb(47, 8, 66);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: wheat;
+  border-top: 5px solid rgb(245, 222, 179);
+}
+footer p {
   font-family: Courier;
+  letter-spacing: 2px;
 }/*# sourceMappingURL=Personal-page.css.map */

@@ -1,4 +1,5 @@
 /*Kan bruke variabler slik*/
+/*Kan bruke variabler slik*/
 * {
   margin: 0;
   padding: 0;
@@ -7,8 +8,15 @@
   box-sizing: border-box;
 }
 
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
 header {
-  height: 90px;
+  height: 100px;
   display: flex;
   max-width: auto; /* Match your site's max width */
   align-items: center;
@@ -18,6 +26,9 @@ header {
   animation: bg-animation 4s infinite alternate;
   background: linear-gradient(45deg, rgb(47, 8, 66), rgb(0, 91, 107), rgb(59, 19, 19));
   background-size: 400%;
+  z-index: 10;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+  border-bottom: 4px solid rgb(245, 222, 179);
 }
 
 @keyframes fallin {
@@ -48,6 +59,94 @@ header {
     background-position: right;
   }
 }
+main {
+  min-height: 100vh;
+  padding: 50px 0;
+  background-color: rgb(0, 91, 107);
+  background-image: repeating-linear-gradient(45deg, rgba(0, 0, 0, 0.1) 0px, rgba(0, 0, 0, 0.1) 10px, transparent 10px, transparent 20px);
+}
+@media (max-width: 800px) {
+  main {
+    /*If the page gets lower than 800px wide it changes flex direction*/
+    flex-direction: column;
+  }
+}
+
+@keyframes pop_up {
+  from {
+    transform: translate(-20px, 20px);
+    opacity: 0.3;
+  }
+  to {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+}
+footer {
+  height: 100px;
+  background-color: rgb(0, 91, 107);
+}
+
+.logo_content {
+  display: flex;
+  align-items: center;
+}
+.logo_content img {
+  left: 20px;
+  height: 70px;
+  border: 2px solid white;
+  position: relative;
+  margin-right: 30px;
+  animation: fallin 0.7s ease-in forwards;
+  box-shadow: 4px 4px 0 black;
+  border-radius: 9px;
+}
+.logo_content h1 {
+  color: rgb(245, 222, 179);
+  font-family: "Courier New", Courier, monospace;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -2px;
+}
+
+.navi1 {
+  height: 142px;
+  position: relative;
+  top: 0;
+  margin-left: 0;
+  display: flex;
+  left: auto;
+  list-style: none;
+  align-items: center;
+  justify-content: center;
+  animation: fallin_invers 0.7s ease-in forwards;
+}
+.navi1 ul {
+  display: flex;
+  gap: 15px;
+}
+.navi1 li {
+  display: inline-block;
+  font-family: "Fjall One", sans-serif;
+  border-radius: 9px;
+  box-shadow: 7px 5px 7px 4px black;
+  font-size: 26px;
+  padding: 5px 10px;
+  transition: transform 0.3s;
+  transform: skew(-3deg);
+}
+.navi1 li a {
+  color: white;
+}
+.navi1 li:hover {
+  background-color: rgb(228, 207, 167);
+  transform: translateY(-3px);
+  transition: transform 0.3s ease;
+}
+.navi1 li:hover a {
+  color: black;
+}
+
 .logo_content {
   display: inline-block;
   display: flex;
@@ -60,6 +159,7 @@ header {
   position: relative;
   margin-right: 56px;
   animation: fallin 0.7s ease-in forwards;
+  border-radius: 9px;
 }
 .logo_content h1 {
   color: whitesmoke;
@@ -83,9 +183,9 @@ header {
   font-family: "Fjall One", sans-serif;
   border-radius: 9px;
   box-shadow: 7px 5px 7px 4px rgb(14, 41, 39);
-  border: 1px solid rgb(255, 255, 255);
+  border: 2.21px solid rgb(245, 222, 179);
   font-size: 26px;
-  padding: 7px;
+  padding: 8px 20px;
   transition: transform 0.3s;
   margin-right: 25px;
 }
@@ -145,6 +245,7 @@ input[type=search] {
   padding: 0 10px;
   font-size: 16px;
   position: relative;
+  border-radius: 20px;
 }
 
 button[type=submit] {
@@ -155,6 +256,7 @@ button[type=submit] {
   background-color: rgb(0, 255, 238);
   color: black;
   font-weight: 700;
+  border-radius: 20px;
 }
 
 footer {
@@ -174,7 +276,7 @@ main {
   height: 100%;
   background-position: bottom;
   background-size: cover;
-  background-color: rgb(0, 91, 107);
+  background-color: rgb(1, 30, 46);
 }
 @media (max-width: 800px) {
   main {
@@ -188,7 +290,6 @@ main {
   display: flex;
   justify-content: center;
   height: 700px;
-  background-color: wheat;
 }
 .First_leftbar {
   background-image: url(/Vent1imgs/Autre/levre-produi.jpg);
