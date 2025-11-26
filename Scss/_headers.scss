@@ -9,6 +9,13 @@
     @content;
   }
 }
+$header-bg: linear-gradient(45deg, rgb(47, 8, 66), rgb(0, 91, 107), rgb(59, 19, 19));
+$shadow-hard: 7px 5px 7px 4px rgba(0, 0, 0, 0.4);
+$shadow-soft: 0 10px 25px rgba(0, 0, 0, 0.2);
+$mobile: 800px; // Assuming a mobile breakpoint based on mixin
+$primary-color: rgb(0, 91, 107); // Teal
+$accent-color: rgb(228, 207, 167); // Wheat-like
+$dark-accent: rgb(47, 8, 66); // Purple-ish
 // THE PALETTE
 $vent-wheat: rgb(245, 222, 179);
 $vent-teal: rgb(0, 91, 107);
@@ -149,7 +156,7 @@ footer {
 .navi1 {
    ul {
     display: flex;
-    gap: 15px;
+    gap: 10px;
   }
   height: 142px;
   position: relative;
@@ -171,7 +178,7 @@ footer {
     font-size: 26px;
     padding: 5px 10px;
     transition: transform 0.3s;
-    transform: skew(-3deg); // Angled buttons
+    transform: skew(-2deg); // Angled buttons
     
   }
   li a {
@@ -248,63 +255,46 @@ footer {
   }
 }
 
-button[type="submit"] {
-  width: 50%;
-  background-color: #4caf50;
-  color: white;
-  padding: 14px 20px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  
-}
 
-button[type="reset"] {
-  width: 50%;
-  background-color: #f44336;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-.search-content form {
-  position: relative;
-  top: 37%;
-  left: 40%;
-  
-}
 .search-content {
-  display: flex;
-  position: relative;
-  flex-flow: column;
-
   form {
-  position: relative;
-  top: 37%;
-  left: 40%;
-  
-}
-}
+    display: flex;
+    align-items: center;
+    margin-left: 15px;
+    input[type="search"] {
+      width: 250px;
+      height: 40px;
+      padding: 0 25px;
+      border: 2px solid $primary-color;
+      border-radius: 20px 0 0 20px; // Rounded for style
+      background: rgba(255, 255, 255, 0.8);
+      transition: width 0.3s ease;
+      &:focus {
+        width: 300px;
+        border-color: $accent-color;
+      }
+    }
+    button[type="submit"] {
+      height: 40px;
+      padding: 0 15px;
+      background-color: $primary-color;
+      color: white;
+      border: none;
+      border-radius: 0 20px 20px 0;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      &:hover {
+        background-color: $accent-color;
+        color: black;
+      }
+    }
+  }
 
-
-input[type="search"] {
-  width: 300px;
-  height: 40px;
-  padding: 0 10px;
-  font-size: 16px;
-  position: relative;
-  border-radius: 20px;
-}
-
-button[type="submit"] {
-  width: 55px; /* sets the width of the search bar to 300px */
-  height: 40px; /* sets the height of the search bar to 30px */
-  padding: 0 3px; /* adds space within the search bar */
-  font-size: 13px;
-  background-color: rgb(0, 255, 238);
-  color:black;
-  font-weight: 700;
-  border-radius: 20px;
+  @include mobile {
+    margin: 10px 0;
+    form {
+      width: 100%;
+      justify-content: center;
+    }
+  }
 }

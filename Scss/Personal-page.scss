@@ -14,6 +14,30 @@ $shadow-glow: 0 0 15px rgba(0, 255, 238, 0.5);
     @content;
   }
 }
+// New: Pulse for interactive elements
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: $shadow-soft;
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: $shadow-hard;
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: $shadow-soft;
+  }
+}
+// New: Wavy divider animation
+@keyframes wave {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 100px 0;
+  }
+}
 
 // =====================
 // GLOBAL RESET
@@ -90,7 +114,7 @@ main {
 .First {
   @extend .container-box;
   min-height: 550px;
-
+  
   &_leftbar {
     width: 35%;
     background-image: url('/Venturoimgs/Les logos/blåavatar.png');
@@ -106,14 +130,22 @@ main {
       position: absolute;
       top: 0; left: 0; width: 100%; height: 100%;
       background: linear-gradient(to bottom, transparent 50%, rgba(0,0,0,0.3));
+      border-right: 5px dashed white; // Creative: Dashed for dynamic feel
+      animation: pulse 2s infinite; // Pulsing image
+    }
+    // Overlay for text or effects
+    &::after {
+      content: 'Profile Avatar';
+      position: absolute;
+      top: 11px;
+      left: 10px;
+      color: rgb(0, 0, 0);
+      text-shadow: 2px 2px 4px black;
+      font-family: Courier;
     }
 
-    @include mobile {
-      width: 100%;
-      height: 300px;
-      border-right: none;
-      border-bottom: 4px solid $vent-dark;
-    }
+    
+  
   }
 
   &_rightbar {
@@ -182,11 +214,12 @@ main {
     flex-direction: column;
     justify-content: center;
     border-right: 4px solid $vent-dark;
-
+    
     h1 {
       font-size: 3rem;
       font-family: "Fjall One";
       color: $vent-dark;
+      
     }
 
     p {

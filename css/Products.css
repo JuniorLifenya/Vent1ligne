@@ -123,7 +123,7 @@ footer {
 }
 .navi1 ul {
   display: flex;
-  gap: 15px;
+  gap: 10px;
 }
 .navi1 li {
   display: inline-block;
@@ -133,7 +133,7 @@ footer {
   font-size: 26px;
   padding: 5px 10px;
   transition: transform 0.3s;
-  transform: skew(-3deg);
+  transform: skew(-2deg);
 }
 .navi1 li a {
   color: white;
@@ -201,62 +201,47 @@ footer {
   color: black;
 }
 
-button[type=submit] {
-  width: 50%;
-  background-color: #4caf50;
-  color: white;
-  padding: 14px 20px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-button[type=reset] {
-  width: 50%;
-  background-color: #f44336;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
 .search-content form {
-  position: relative;
-  top: 37%;
-  left: 40%;
-}
-
-.search-content {
   display: flex;
-  position: relative;
-  flex-flow: column;
+  align-items: center;
+  margin-left: 15px;
 }
-.search-content form {
-  position: relative;
-  top: 37%;
-  left: 40%;
-}
-
-input[type=search] {
-  width: 300px;
+.search-content form input[type=search] {
+  width: 250px;
   height: 40px;
-  padding: 0 10px;
-  font-size: 16px;
-  position: relative;
-  border-radius: 20px;
+  padding: 0 25px;
+  border: 2px solid rgb(0, 91, 107);
+  border-radius: 20px 0 0 20px;
+  background: rgba(255, 255, 255, 0.8);
+  transition: width 0.3s ease;
 }
-
-button[type=submit] {
-  width: 55px; /* sets the width of the search bar to 300px */
-  height: 40px; /* sets the height of the search bar to 30px */
-  padding: 0 3px; /* adds space within the search bar */
-  font-size: 13px;
-  background-color: rgb(0, 255, 238);
+.search-content form input[type=search]:focus {
+  width: 300px;
+  border-color: rgb(228, 207, 167);
+}
+.search-content form button[type=submit] {
+  height: 40px;
+  padding: 0 15px;
+  background-color: rgb(0, 91, 107);
+  color: white;
+  border: none;
+  border-radius: 0 20px 20px 0;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+.search-content form button[type=submit]:hover {
+  background-color: rgb(228, 207, 167);
   color: black;
-  font-weight: 700;
-  border-radius: 20px;
+}
+@media (max-width: 800px) {
+  .search-content {
+    /*If the page gets lower than 800px wide it changes flex direction*/
+    margin: 10px 0;
+  }
+  .search-content form {
+    width: 100%;
+    justify-content: center;
+  }
 }
 
 footer {
