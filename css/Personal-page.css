@@ -134,7 +134,8 @@ footer {
   font-size: 26px;
   padding: 5px 10px;
   transition: transform 0.3s;
-  transform: skew(-2deg);
+  transform: skew(-3deg);
+  background: rgba(0, 0, 0, 0.3);
 }
 .navi1 li a {
   color: white;

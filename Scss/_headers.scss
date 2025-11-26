@@ -178,7 +178,8 @@ footer {
     font-size: 26px;
     padding: 5px 10px;
     transition: transform 0.3s;
-    transform: skew(-2deg); // Angled buttons
+    transform: skew(-3deg); // Angled buttons
+    background: rgba(0,0,0,0.3);
     
   }
   li a {
