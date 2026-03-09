@@ -60,17 +60,17 @@ header {
     background-position: right;
   }
 }
-main {
-  min-height: 100vh;
-  padding: 50px 0;
-  background-color: rgb(0, 91, 107);
-  background-image: repeating-linear-gradient(45deg, rgba(0, 0, 0, 0.1) 0px, rgba(0, 0, 0, 0.1) 10px, transparent 10px, transparent 20px);
-}
 @media (max-width: 800px) {
   main {
     /*If the page gets lower than 800px wide it changes flex direction*/
     flex-direction: column;
   }
+}
+main {
+  min-height: 100vh;
+  padding: 50px 0;
+  background-color: rgb(0, 91, 107);
+  background-image: repeating-linear-gradient(45deg, rgba(0, 0, 0, 0.1) 0px, rgba(0, 0, 0, 0.1) 10px, transparent 10px, transparent 20px);
 }
 
 @keyframes pop_up {
@@ -86,67 +86,6 @@ main {
 footer {
   height: 100px;
   background-color: rgb(0, 91, 107);
-}
-
-.logo_content {
-  display: flex;
-  align-items: center;
-}
-.logo_content img {
-  left: 20px;
-  height: 70px;
-  border: 2px solid white;
-  position: relative;
-  margin-right: 30px;
-  animation: fallin 0.7s ease-in forwards;
-  box-shadow: 4px 4px 0 black;
-  border-radius: 9px;
-}
-.logo_content h1 {
-  color: rgb(245, 222, 179);
-  font-family: "Courier New", Courier, monospace;
-  font-weight: 900;
-  text-transform: uppercase;
-  letter-spacing: -2px;
-}
-
-.navi1 {
-  height: 142px;
-  position: relative;
-  top: 0;
-  margin-left: 0;
-  display: flex;
-  left: auto;
-  list-style: none;
-  align-items: center;
-  justify-content: center;
-  animation: fallin_invers 0.7s ease-in forwards;
-}
-.navi1 ul {
-  display: flex;
-  gap: 10px;
-}
-.navi1 li {
-  display: inline-block;
-  font-family: "Fjall One", sans-serif;
-  border-radius: 9px;
-  box-shadow: 7px 5px 7px 4px black;
-  font-size: 26px;
-  padding: 5px 10px;
-  transition: transform 0.3s;
-  transform: skew(-3deg);
-  background: rgba(0, 0, 0, 0.3);
-}
-.navi1 li a {
-  color: white;
-}
-.navi1 li:hover {
-  background-color: rgb(228, 207, 167);
-  transform: translateY(-3px);
-  transition: transform 0.3s ease;
-}
-.navi1 li:hover a {
-  color: black;
 }
 
 .logo_content {
@@ -184,10 +123,8 @@ footer {
   display: inline-block;
   font-family: "Fjall One", sans-serif;
   border-radius: 9px;
-  box-shadow: 7px 5px 7px 4px rgb(14, 41, 39);
-  border: 2.21px solid rgb(245, 222, 179);
-  font-size: 26px;
-  padding: 8px 20px;
+  font-size: 24px;
+  padding: 6px 10px;
   transition: transform 0.3s;
   margin-right: 25px;
 }
@@ -195,7 +132,7 @@ footer {
   color: rgb(255, 255, 255);
 }
 .navi1 li:hover {
-  background-color: rgb(228, 207, 167);
+  box-shadow: 4px 4px 10px rgb(55, 48, 36);
   transform: translateY(-3px);
   transition: transform 0.3s ease;
 }

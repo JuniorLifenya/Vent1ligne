@@ -1,4 +1,8 @@
 /*Kan bruke variabler slik*/
+html {
+  scroll-behavior: smooth;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -58,17 +62,17 @@ header {
     background-position: right;
   }
 }
-main {
-  min-height: 100vh;
-  padding: 50px 0;
-  background-color: rgb(0, 91, 107);
-  background-image: repeating-linear-gradient(45deg, rgba(0, 0, 0, 0.1) 0px, rgba(0, 0, 0, 0.1) 10px, transparent 10px, transparent 20px);
-}
 @media (max-width: 800px) {
   main {
     /*If the page gets lower than 800px wide it changes flex direction*/
     flex-direction: column;
   }
+}
+main {
+  min-height: 100vh;
+  padding: 50px 0;
+  background-color: rgb(0, 91, 107);
+  background-image: repeating-linear-gradient(45deg, rgba(0, 0, 0, 0.1) 0px, rgba(0, 0, 0, 0.1) 10px, transparent 10px, transparent 20px);
 }
 
 @keyframes pop_up {
@@ -108,10 +112,13 @@ footer {
   letter-spacing: -2px;
 }
 
+.navi1 ul {
+  display: flex;
+  gap: 15px;
+}
 .navi1 {
   height: 142px;
   position: relative;
-  top: 0;
   margin-left: 0;
   display: flex;
   left: auto;
@@ -120,30 +127,25 @@ footer {
   justify-content: center;
   animation: fallin_invers 0.7s ease-in forwards;
 }
-.navi1 ul {
-  display: flex;
-  gap: 15px;
-}
 .navi1 li {
   display: inline-block;
   font-family: "Fjall One", sans-serif;
   border-radius: 9px;
-  box-shadow: 7px 5px 7px 4px black;
-  font-size: 26px;
-  padding: 8px 20px;
+  font-size: 20px;
+  padding: 8px 10px;
   transition: transform 0.3s;
-  transform: skew(-10deg);
 }
 .navi1 li a {
-  color: white;
+  color: wheat;
 }
 .navi1 li:hover {
-  background-color: rgb(228, 207, 167);
+  background-color: rgb(59, 19, 19) 10px;
+  box-shadow: 4px 4px 10px black;
   transform: translateY(-3px);
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, background-color 0.3s ease;
 }
 .navi1 li:hover a {
-  color: black;
+  color: rgb(255, 255, 255);
 }
 
 .nav2 {
@@ -162,7 +164,7 @@ footer {
 }
 
 #searchButton {
-  padding: 12px 10px;
+  padding: 1px 10px;
   box-shadow: 7px 5px 7px 4px;
   font-size: 16px;
   cursor: pointer;
@@ -177,7 +179,8 @@ footer {
 }
 #searchButton:hover {
   background-color: rgb(2.8275862069, 120.1724137931, 77.0517241379);
-  transform: translateY(-2px);
+  transform: translateY(-3px) translateX(-3px);
+  transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
 #searchDropdown {
